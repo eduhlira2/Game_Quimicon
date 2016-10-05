@@ -20,8 +20,6 @@ public class ValoresElementos : MonoBehaviour {
 	
 	}
 
-
-
 	public void MudarValores(string ToSave){
 
 		nomeElemento = ToSave;

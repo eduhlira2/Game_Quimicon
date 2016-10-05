@@ -9,7 +9,7 @@ public class InBattle : MonoBehaviour {
 	public Image fighter, fighterDois, fighterTres;
 	public GameObject lutador, lutadorDois, lutadorTres;
 	public GameObject bromo, zinco, oxigenio;
-	public Text ataqueEscolhido;
+	public Text ataqueEscolhido, defesaInimigo;
 	private int atacou;
 
 	// Use this for initialization
@@ -31,7 +31,7 @@ public class InBattle : MonoBehaviour {
 	}
 
 	public void ataqueMassaAtomica(){
-		atacou = 1;base nm
+		atacou = 1;
 		ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
 	}
 
@@ -42,9 +42,15 @@ public class InBattle : MonoBehaviour {
 
 	public void enviarAtaque(){
 		if (atacou == 1){
-			
+			if(Oponente.ataqueDefesa == 1){
+				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				Debug.Log("O oponente se defendeu");
+				}
 		}if(atacou == 2){
-			
+			if(Oponente.ataqueDefesa == 1){
+				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
+				Debug.Log("O oponente se defendeu");
+			}
 		}
 	}
 

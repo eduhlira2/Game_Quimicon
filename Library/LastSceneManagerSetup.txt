@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Resources/Scenes/exemplo1.unity
+- path: Assets/Resources/Scenes/Batalha.unity
   isLoaded: 1
   isActive: 1

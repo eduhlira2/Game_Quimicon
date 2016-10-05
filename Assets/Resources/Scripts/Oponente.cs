@@ -6,6 +6,9 @@ public class Oponente : MonoBehaviour {
 
 	public Image fighterQuatro, fighterCinco, fighterSeis, elementoInimigo;
 	private int selected, aux;
+	public static float massaAtomicaFloat;
+	public static int numeroAtomicoInt;
+	public static int ataqueDefesa;
 
 	// Use this for initialization
 	void Start () {
@@ -27,26 +30,34 @@ public class Oponente : MonoBehaviour {
 		if(selected == 0 && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
+			PlayerPrefs.SetString("Oponente1", "Oxigenio");
+			Oponente.massaAtomicaFloat = 15.9f;
+			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
-			mostrarInimigos();
+			Oponente.ataqueDefesa = 1;
 		}
 		if(selected == 1 && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			aux = aux+1;
+			PlayerPrefs.SetString("Oponente1", "Zinco");
 			mostrarInimigos();
+			Oponente.ataqueDefesa = 2;
 		}
 		if(selected == 2  && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			aux = aux+1;
+			PlayerPrefs.SetString("Oponente1", "Bromo");
 			mostrarInimigos();
+			Oponente.ataqueDefesa = 3;
 		}
 
 
 		if(selected == 0 && aux == 2f){
 			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
-
+			Oponente.massaAtomicaFloat = 15.9f;
+			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
 			mostrarInimigos();
 		}
