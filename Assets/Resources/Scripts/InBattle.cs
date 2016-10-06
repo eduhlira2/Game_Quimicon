@@ -10,6 +10,7 @@ public class InBattle : MonoBehaviour {
 	public GameObject lutador, lutadorDois, lutadorTres, controladorBotoes, balaoFala;
 	public GameObject bromo, zinco, oxigenio;
 	public Text ataqueEscolhido, defesaInimigo;
+	public Text balaoText;
 	private int atacou;
 
 	// Use this for initialization
@@ -32,11 +33,13 @@ public class InBattle : MonoBehaviour {
 
 	public void ataqueMassaAtomica(){
 		atacou = 1;
+		balaoText.text = " Use a massa atomica!!"; 
 		ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
 	}
 
 	public void ataqueNumeroAtomico(){
 		atacou = 2;
+		balaoText.text = " Use o número Atomico!!"; 
 		ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());
 	}
 
@@ -44,6 +47,7 @@ public class InBattle : MonoBehaviour {
 
 		controladorBotoes.SetActive (false);
 		balaoFala.SetActive (true);
+
 
 		Invoke ("AtaqueOponente", 2);
 
@@ -120,4 +124,6 @@ public class InBattle : MonoBehaviour {
 
 
 	}
+
+
 }
