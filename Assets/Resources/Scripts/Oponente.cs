@@ -20,7 +20,8 @@ public class Oponente : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+
+
 	}
 
 	void mostrarInimigos(){
@@ -40,6 +41,8 @@ public class Oponente : MonoBehaviour {
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			aux = aux+1;
+			Oponente.massaAtomicaFloat = 65.4f;
+			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente1", "Zinco");
 			mostrarInimigos();
 			Oponente.ataqueDefesa = 2;
@@ -48,6 +51,8 @@ public class Oponente : MonoBehaviour {
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			aux = aux+1;
+			Oponente.massaAtomicaFloat = 79.9f;
+			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente1", "Bromo");
 			mostrarInimigos();
 			Oponente.ataqueDefesa = 3;
@@ -59,16 +64,19 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 15.9f;
 			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
+			PlayerPrefs.SetString("Oponente2", "Oxigenio");
 			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 2f){
 			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			aux = aux+1;
+			PlayerPrefs.SetString("Oponente2", "Zinco");
 			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 2f){
 			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			aux = aux+1;
+			PlayerPrefs.SetString("Oponente2", "Bromo");
 			mostrarInimigos();
 		}
 

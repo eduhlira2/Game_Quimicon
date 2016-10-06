@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class InBattle : MonoBehaviour {
 
 	public Image fighter, fighterDois, fighterTres;
-	public GameObject lutador, lutadorDois, lutadorTres;
+	public GameObject lutador, lutadorDois, lutadorTres, controladorBotoes, balaoFala;
 	public GameObject bromo, zinco, oxigenio;
 	public Text ataqueEscolhido, defesaInimigo;
 	private int atacou;
@@ -41,20 +41,46 @@ public class InBattle : MonoBehaviour {
 	}
 
 	public void enviarAtaque(){
+
+		controladorBotoes.SetActive (false);
+		balaoFala.SetActive (true);
+
+		Invoke ("AtaqueOponente", 2);
+
+
+	}
+
+	void AtaqueOponente(){
 		if (atacou == 1){
 			if(Oponente.ataqueDefesa == 1){
 				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
 				Debug.Log("O oponente se defendeu");
-				}
+			}
+			if(Oponente.ataqueDefesa == 2){
+				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				Debug.Log("O oponente se defendeu");
+			}
+			if(Oponente.ataqueDefesa == 3){
+				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				Debug.Log("O oponente se defendeu");
+			}
 		}if(atacou == 2){
 			if(Oponente.ataqueDefesa == 1){
+				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
+				Debug.Log("O oponente se defendeu");
+			}
+			if(Oponente.ataqueDefesa == 2){
+				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
+				Debug.Log("O oponente se defendeu");
+			}
+			if(Oponente.ataqueDefesa == 3){
 				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
 				Debug.Log("O oponente se defendeu");
 			}
 		}
 	}
 
-	void AtivarFighters(){
+	void AtivarFighters(){			
 
 		if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio") {
 			oxigenio.SetActive (true);
