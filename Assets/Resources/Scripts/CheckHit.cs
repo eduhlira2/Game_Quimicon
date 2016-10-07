@@ -4,11 +4,12 @@ using System.Collections;
 
 public class CheckHit : MonoBehaviour {
 
-	public float hitEnemy, hitChar;
+	public float hitEnemy, hitChar, massaAtomicaFloat;
 	public GameObject character, balaoFala, enemy1, controladorBotoes, controladorBotoes2, controladorBotoesPai;
 	public static int statusEnemy;
 	public Image elementoInimigo, imagem2;
 	public Text ataqueEscolhido, defesaInimigo;
+	public int numeroAtomicoInt; 
 
 
 	// Use this for initialization
@@ -55,19 +56,25 @@ public class CheckHit : MonoBehaviour {
 
 		int rand;
 		rand = Random.Range(0,2);
-		Debug.Log(rand);
+		Debug.Log("O ataque escolhido foi"+rand);
 
 		if(rand >= 0){
 			if(Oponente.ataqueDefesa == 1){
-				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				massaAtomicaFloat = 15.9f;
+				defesaInimigo.text = ((massaAtomicaFloat).ToString());
+				Debug.Log ("O oxigenio esta atacando");
 
 			}
 			if(Oponente.ataqueDefesa == 2){
-				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				massaAtomicaFloat = 65.4f;
+				defesaInimigo.text = ((massaAtomicaFloat).ToString());
+				Debug.Log ("O zinco esta atacando");
 
 			}
 			if(Oponente.ataqueDefesa == 3){
-				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				massaAtomicaFloat = 79.9f;
+				defesaInimigo.text = ((massaAtomicaFloat).ToString());
+				Debug.Log ("O bromo esta atacando");
 			
 			}
 			controladorBotoesPai.SetActive(true);
@@ -76,15 +83,20 @@ public class CheckHit : MonoBehaviour {
 		}
 		if(rand <= 2 && rand >=1){
 			if(Oponente.ataqueDefesa == 1){
-				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
+				numeroAtomicoInt = 8;
+				defesaInimigo.text = ((numeroAtomicoInt).ToString());
+				Debug.Log ("O oxigenio esta atacando");
 
 			}
 			if(Oponente.ataqueDefesa == 2){
-				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
-
+				numeroAtomicoInt = 30;
+				defesaInimigo.text = ((numeroAtomicoInt).ToString());
+				Debug.Log ("O zinco esta atacando");
 			}
 			if(Oponente.ataqueDefesa == 3){
-				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
+				numeroAtomicoInt = 35;
+				defesaInimigo.text = ((numeroAtomicoInt).ToString());
+				Debug.Log ("O bromo esta atacando");
 			
 			}
 			controladorBotoesPai.SetActive(true);

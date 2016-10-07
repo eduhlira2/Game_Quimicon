@@ -26,7 +26,7 @@ public class Oponente : MonoBehaviour {
 
 	void mostrarInimigos(){
 		selected = Random.Range(0,3);
-		Debug.Log(selected);
+		Debug.Log("A ordem do oponente esta em:"+ selected);
 
 		if(selected == 0 && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
@@ -36,6 +36,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
 			Oponente.ataqueDefesa = 1;
+			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
@@ -44,8 +45,8 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente1", "Zinco");
-			mostrarInimigos();
 			Oponente.ataqueDefesa = 2;
+			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
@@ -54,8 +55,8 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente1", "Bromo");
-			mostrarInimigos();
 			Oponente.ataqueDefesa = 3;
+			mostrarInimigos();
 		}
 
 
@@ -106,7 +107,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 35;
 			Oponente.ataqueDefesa = 3;
 		}
-		Debug.Log(aux);
+		Debug.Log("O valor de aux eh:"+aux);
 
 	}
 	
