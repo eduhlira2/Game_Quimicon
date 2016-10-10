@@ -48,12 +48,19 @@ public class CheckHit : MonoBehaviour {
 			elementoInimigo.sprite =  Resources.Load<Sprite>("Sprites/"+PlayerPrefs.GetString("Oponente2"))as Sprite;
 			ataqueEscolhido.text = "0";
 			defesaInimigo.text = "0";
+			if(Oponente.oponenteSegundo == 1){
+				Oponente.ataqueDefesa = 1;
+			}if(Oponente.oponenteSegundo == 2){
+				Oponente.ataqueDefesa = 2;
+			}if(Oponente.oponenteSegundo == 3){
+				Oponente.ataqueDefesa = 3;
+			}
 			Invoke ("ataqueInimigo", 3);
 		}
 	}
 
 	void ataqueInimigo(){
-
+		Debug.Log("O opnente escolhido eh o:"+Oponente.ataqueDefesa);
 		int rand;
 		rand = Random.Range(0,2);
 		Debug.Log("O ataque escolhido foi"+rand);
@@ -63,8 +70,7 @@ public class CheckHit : MonoBehaviour {
 				massaAtomicaFloat = 15.9f;
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());
 				Debug.Log ("O oxigenio esta atacando");
-
-			}
+   		}
 			if(Oponente.ataqueDefesa == 2){
 				massaAtomicaFloat = 65.4f;
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());

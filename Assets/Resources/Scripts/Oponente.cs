@@ -8,7 +8,7 @@ public class Oponente : MonoBehaviour {
 	private int selected, aux;
 	public static float massaAtomicaFloat;
 	public static int numeroAtomicoInt;
-	public static int ataqueDefesa;
+	public static int ataqueDefesa, oponenteSegundo, oponenteTerceiro;
 
 	// Use this for initialization
 	void Start () {
@@ -67,6 +67,7 @@ public class Oponente : MonoBehaviour {
 			aux = aux+1;
 			PlayerPrefs.SetString("Oponente2", "Oxigenio");
 			Oponente.ataqueDefesa = 1;
+			Oponente.oponenteSegundo = 1;
 			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 2f){
@@ -76,6 +77,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente2", "Zinco");
 			Oponente.ataqueDefesa = 2;
+			Oponente.oponenteSegundo = 2;
 			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 2f){
@@ -85,6 +87,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 35;
 			Oponente.ataqueDefesa = 3;
 			PlayerPrefs.SetString("Oponente2", "Bromo");
+			Oponente.oponenteSegundo = 3;
 			mostrarInimigos();
 		}
 
@@ -94,18 +97,21 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 15.9f;
 			Oponente.numeroAtomicoInt = 8;
 			Oponente.ataqueDefesa = 1;
+			Oponente.oponenteTerceiro = 1;
 		}
 		if(selected == 1 && aux == 3f){
 			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
 			Oponente.ataqueDefesa = 2;
+			Oponente.oponenteTerceiro = 2;
 		}
 		if(selected == 2  && aux == 3f){
 			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
 			Oponente.ataqueDefesa = 3;
+			Oponente.oponenteTerceiro = 3;
 		}
 		Debug.Log("O valor de aux eh:"+aux);
 
