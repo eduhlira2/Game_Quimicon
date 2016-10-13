@@ -1,13 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\CheckHit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Resources\Scripts\InBattle.cs">
     <Files>
       <File FileName="Assets\Resources\Scripts\CharacterSelect.cs" Line="14" Column="11" />
-      <File FileName="Assets\Resources\Scripts\InBattle.cs" Line="1" Column="1" />
+      <File FileName="Assets\Resources\Scripts\InBattle.cs" Line="51" Column="30" />
       <File FileName="Assets\Resources\Scripts\ShowElement.cs" Line="1" Column="1" />
       <File FileName="Assets\Resources\Scripts\ValoresElementos.cs" Line="1" Column="1" />
-      <File FileName="Assets\Resources\Scripts\Oponente.cs" Line="114" Column="33" />
-      <File FileName="Assets\Resources\Scripts\CheckHit.cs" Line="58" Column="4" />
+      <File FileName="Assets\Resources\Scripts\Oponente.cs" Line="96" Column="36" />
+      <File FileName="Assets\Resources\Scripts\CheckHit.cs" Line="46" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

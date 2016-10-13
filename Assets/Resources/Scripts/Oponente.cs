@@ -26,7 +26,7 @@ public class Oponente : MonoBehaviour {
 
 	void mostrarInimigos(){
 		selected = Random.Range(0,3);
-		Debug.Log("A ordem do oponente esta em:"+ selected);
+
 
 		if(selected == 0 && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
@@ -66,7 +66,6 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
 			PlayerPrefs.SetString("Oponente2", "Oxigenio");
-			Oponente.ataqueDefesa = 1;
 			Oponente.oponenteSegundo = 1;
 			mostrarInimigos();
 		}
@@ -76,7 +75,6 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente2", "Zinco");
-			Oponente.ataqueDefesa = 2;
 			Oponente.oponenteSegundo = 2;
 			mostrarInimigos();
 		}
@@ -85,7 +83,6 @@ public class Oponente : MonoBehaviour {
 			aux = aux+1;
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
-			Oponente.ataqueDefesa = 3;
 			PlayerPrefs.SetString("Oponente2", "Bromo");
 			Oponente.oponenteSegundo = 3;
 			mostrarInimigos();
@@ -96,24 +93,24 @@ public class Oponente : MonoBehaviour {
 			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
 			Oponente.massaAtomicaFloat = 15.9f;
 			Oponente.numeroAtomicoInt = 8;
-			Oponente.ataqueDefesa = 1;
+			PlayerPrefs.SetString("Oponente3", "Oxigenio");
 			Oponente.oponenteTerceiro = 1;
 		}
 		if(selected == 1 && aux == 3f){
 			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
-			Oponente.ataqueDefesa = 2;
+			PlayerPrefs.SetString("Oponente3", "Zinco");
 			Oponente.oponenteTerceiro = 2;
 		}
 		if(selected == 2  && aux == 3f){
 			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
-			Oponente.ataqueDefesa = 3;
+			PlayerPrefs.SetString("Oponente3", "Bromo");
 			Oponente.oponenteTerceiro = 3;
 		}
-		Debug.Log("O valor de aux eh:"+aux);
+
 
 	}
 	

@@ -10,7 +10,7 @@ public class InBattle : MonoBehaviour {
 	public GameObject lutador, lutadorDois, lutadorTres, controladorBotoes, balaoFala;
 	public GameObject bromo, zinco, oxigenio;
 	public Text ataqueEscolhido, defesaInimigo;
-	public Text balaoText;
+	public Text balaoText, valorInimigo;
 	private int atacou;
 
 	// Use this for initialization
@@ -48,38 +48,42 @@ public class InBattle : MonoBehaviour {
 		controladorBotoes.SetActive (false);
 		balaoFala.SetActive (true);
 
-
-		Invoke ("AtaqueOponente", 2);
-
-
+		Invoke ("AtaqueOponente", 1);
 	}
+
 
 	void AtaqueOponente(){
 		if (atacou == 1){
 			if(Oponente.ataqueDefesa == 1){
+				Oponente.massaAtomicaFloat = 15.9f;
 				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
-				Debug.Log("O oponente se defendeu");
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
 			if(Oponente.ataqueDefesa == 2){
+				Oponente.massaAtomicaFloat = 65.4f;
 				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
-				Debug.Log("O oponente se defendeu");
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
 			if(Oponente.ataqueDefesa == 3){
+				Oponente.massaAtomicaFloat = 79.9f;
 				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
-				Debug.Log("O oponente se defendeu");
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
 		}if(atacou == 2){
 			if(Oponente.ataqueDefesa == 1){
+				Oponente.numeroAtomicoInt = 8;
 				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
-				Debug.Log("O oponente se defendeu");
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
 			if(Oponente.ataqueDefesa == 2){
+				Oponente.numeroAtomicoInt = 30;
 				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
-				Debug.Log("O oponente se defendeu");
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
 			if(Oponente.ataqueDefesa == 3){
+				Oponente.numeroAtomicoInt = 35;
 				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
-				Debug.Log("O oponente se defendeu");
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
 		}
 	}
