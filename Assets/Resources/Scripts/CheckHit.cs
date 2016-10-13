@@ -6,18 +6,21 @@ public class CheckHit : MonoBehaviour {
 
 	public float  hitChar, massaAtomicaFloat;
 	public GameObject character, enemy, balaoFala, enemy1, enemy2, enemy3, controladorBotoes, controladorBotoes2, controladorBotoesPai;
-	public GameObject botaoAtacar;
+	public GameObject botaoAtacar, oxigenio, bromo, zinco;
+	public GameObject recipiente1, recipiente2, recipiente3;
 	public static float hitEnemy;
 	public static int statusEnemy;
 	public Image elementoInimigo, imagem2;
 	public Text ataqueEscolhido, defesaInimigo;
 	public int numeroAtomicoInt;
+	private int personagemNafila;
 	public static bool Atacou;
 
 
 	// Use this for initialization
 	void Start () {
 		CheckHit.statusEnemy = 0;
+		personagemNafila = 0;
 	}
 	
 	// Update is called once per frame
@@ -44,7 +47,8 @@ public class CheckHit : MonoBehaviour {
 		if(hitChar < CheckHit.hitEnemy){
 			Debug.Log ("o cara te matou");
 			Invoke ("executarAnimacaoContra", 1);
-			Invoke ("mudarImagemEnemy", 5);
+			Invoke ("mudarImagemPlayer", 3);
+			personagemNafila = personagemNafila+1;
 		}
 		if(hitChar > CheckHit.hitEnemy && CheckHit.statusEnemy == 2){
 			Invoke ("executarAnimacao3", 3);
@@ -128,6 +132,50 @@ public class CheckHit : MonoBehaviour {
 		if (CheckHit.Atacou == false) {
 			Invoke ("ataqueInimigo", 3);
 		}
+	}
+	void mudarImagemPlayer(){
+		Debug.Log("O valor de personagemNafila eh: "+ personagemNafila);
+		if(personagemNafila == 1){
+
+			if (PlayerPrefs.GetString ("Lutador3") == "Oxigenio") {
+				oxigenio.SetActive (false);
+				recipiente3.SetActive(false);
+			}	
+			if (PlayerPrefs.GetString ("Lutador3") == "Zinco") {
+				zinco.SetActive (false);
+				recipiente3.SetActive(false);
+			}
+			if (PlayerPrefs.GetString ("Lutador3") == "Bromo") {
+				bromo.SetActive (false);
+				recipiente3.SetActive(false);
+			}
+		}
+		if(personagemNafila == 2){
+			if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio") {
+				oxigenio.SetActive (false);
+			}
+			if (PlayerPrefs.GetString ("Lutador1") == "Zinco") {
+				zinco.SetActive (false);
+			}
+			if (PlayerPrefs.GetString ("Lutador1") == "Bromo") {
+				bromo.SetActive (false);
+			}
+		}
+		if(personagemNafila == 3){
+			if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio") {
+				oxigenio.SetActive (false);
+
+			}
+			if (PlayerPrefs.GetString ("Lutador1") == "Zinco") {
+				zinco.SetActive (false);
+			}
+			if (PlayerPrefs.GetString ("Lutador1") == "Bromo") {
+				bromo.SetActive (false);
+			}
+		}
+
+		Invoke ("ataqueInimigo", 3);
+
 	}
 
 	void ataqueInimigo(){

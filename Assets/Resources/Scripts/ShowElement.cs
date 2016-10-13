@@ -67,7 +67,6 @@ public class ShowElement : MonoBehaviour {
 			ShowElement.Bromo = 1;
 			ShowElement.qtdbromo = 1;
 			PlayerPrefs.SetInt("Bromo", ShowElement.Bromo);
-
 		}else{
 			elemento.SetActive(false);
 			errorMensage.SetActive(true);

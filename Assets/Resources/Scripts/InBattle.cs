@@ -11,7 +11,7 @@ public class InBattle : MonoBehaviour {
 	public GameObject bromo, zinco, oxigenio;
 	public Text ataqueEscolhido, defesaInimigo;
 	public Text balaoText, valorInimigo;
-	private int atacou;
+	private int atacou, ativaosFigheters;
 
 	// Use this for initialization
 	void Start () {
@@ -23,11 +23,13 @@ public class InBattle : MonoBehaviour {
 
 		fighter.sprite = Resources.Load<Sprite> ("Sprites/"+PlayerPrefs.GetString("Lutador1"))as Sprite;
 		lutador = Resources.Load<GameObject> ("Prefabs/"+PlayerPrefs.GetString("Lutador1"))as GameObject;
+
+		AtivarFighters();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		AtivarFighters();
+		
 
 	}
 
@@ -93,40 +95,48 @@ public class InBattle : MonoBehaviour {
 		if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio") {
 			oxigenio.SetActive (true);
 			oxigenio.transform.position = new Vector3 (fighter.transform.position.x, fighter.transform.position.y, 0);
-		
+			ativaosFigheters = ativaosFigheters +1;
 		}if (PlayerPrefs.GetString ("Lutador2") == "Oxigenio") {
 			oxigenio.SetActive (true);
 			oxigenio.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);
-
+			ativaosFigheters = ativaosFigheters +1;
 		}if (PlayerPrefs.GetString ("Lutador3") == "Oxigenio") {
 			oxigenio.SetActive (true);
 			oxigenio.transform.position = new Vector3 (fighterTres.transform.position.x, fighterTres.transform.position.y, 0);
-
+			ativaosFigheters = ativaosFigheters +1;
 		}
 
 		if (PlayerPrefs.GetString ("Lutador1") == "Bromo") {
 			bromo.SetActive (true);
 			bromo.transform.position = new Vector3 (fighter.transform.position.x, fighter.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
 		}if (PlayerPrefs.GetString ("Lutador2") == "Bromo") {
 			bromo.SetActive (true);
-			bromo.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);	
+			bromo.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
 		}if (PlayerPrefs.GetString ("Lutador3") == "Bromo") {
 			bromo.SetActive (true);
 			bromo.transform.position = new Vector3 (fighterTres.transform.position.x, fighterTres.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
 
 	  }
 		if (PlayerPrefs.GetString ("Lutador1") == "Zinco") {
 			zinco.SetActive (true);
 			zinco.transform.position = new Vector3 (fighter.transform.position.x, fighter.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
 		}if (PlayerPrefs.GetString ("Lutador2") == "Zinco") {
 			zinco.SetActive (true);
-			zinco.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);	
+			zinco.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
 		}if (PlayerPrefs.GetString ("Lutador3") == "Zinco") {
 			zinco.SetActive (true);
 			zinco.transform.position = new Vector3 (fighterTres.transform.position.x, fighterTres.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
 		}
 
-
+		if(ativaosFigheters != 3){
+			AtivarFighters();
+		}
 	}
 
 
