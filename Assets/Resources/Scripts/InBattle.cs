@@ -30,7 +30,6 @@ public class InBattle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-
 	}
 
 	public void ataqueMassaAtomica(){
