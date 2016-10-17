@@ -1,0 +1,172 @@
+fileFormatVersion: 2
+guid: e78d53fdf62395a4c823476e2d54c8e0
+timeCreated: 1476709891
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: textos_Titulos_0
+    21300002: textos_Titulos_2
+    21300004: textos_Titulos_5
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: textos_Titulos_0
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 372
+        width: 1245
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -87.19919, y: -62.956757}
+        - {x: -84.19919, y: -47.956757}
+        - {x: -84.19919, y: 35.043243}
+        - {x: -97.19919, y: 47.043243}
+        - {x: -120.19919, y: 54.043243}
+        - {x: -147.19919, y: 64.04324}
+        - {x: -194.19919, y: 64.04324}
+        - {x: -245.19919, y: 54.043243}
+        - {x: -466.1992, y: 55.043243}
+        - {x: -471.1992, y: 49.043243}
+        - {x: -471.1992, y: 6.0432434}
+        - {x: -467.1992, y: -4.9567566}
+        - {x: -451.1992, y: -62.956757}
+        - {x: -375.1992, y: -62.956757}
+        - {x: -352.1992, y: -59.956757}
+        - {x: -180.19919, y: -60.956757}
+        - {x: -165.19919, y: -62.956757}
+      - - {x: 457.8008, y: -60.956757}
+        - {x: 459.8008, y: -40.956757}
+        - {x: 459.8008, y: 32.043243}
+        - {x: 457.8008, y: 37.043243}
+        - {x: 422.8008, y: 58.043243}
+        - {x: 377.8008, y: 49.043243}
+        - {x: 344.8008, y: 58.043243}
+        - {x: 325.8008, y: 59.043243}
+        - {x: 258.8008, y: 59.043243}
+        - {x: 226.80081, y: 43.043243}
+        - {x: 199.80081, y: 56.043243}
+        - {x: 164.80081, y: 59.043243}
+        - {x: 105.80081, y: 59.043243}
+        - {x: 11.800812, y: 52.043243}
+        - {x: -59.19919, y: 58.043243}
+        - {x: -78.19919, y: 44.043243}
+        - {x: -78.19919, y: -40.956757}
+        - {x: -61.19919, y: -51.956757}
+        - {x: -35.19919, y: -49.956757}
+        - {x: 57.80081, y: -62.956757}
+        - {x: 142.80081, y: -62.956757}
+        - {x: 162.80081, y: -56.956757}
+        - {x: 185.80081, y: -62.956757}
+        - {x: 238.80081, y: -62.956757}
+        - {x: 311.8008, y: -54.956757}
+        - {x: 364.8008, y: -60.956757}
+    - name: textos_Titulos_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 175
+        width: 1353
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -171, y: 31.446411}
+        - {x: -188, y: 45.44641}
+        - {x: -317, y: 45.44641}
+        - {x: -353, y: 38.44641}
+        - {x: -496, y: 41.44641}
+        - {x: -512, y: 31.446411}
+        - {x: -512, y: -44.55359}
+        - {x: -171, y: -44.55359}
+      - - {x: 61, y: 35.44641}
+        - {x: -161, y: 35.44641}
+        - {x: -166, y: 25.446411}
+        - {x: -166, y: -31.553589}
+        - {x: -160, y: -44.55359}
+        - {x: 53, y: -44.55359}
+        - {x: 63, y: -39.55359}
+        - {x: 63, y: 29.446411}
+      - - {x: 512, y: -36.55359}
+        - {x: 512, y: 26.446411}
+        - {x: 495, y: 36.44641}
+        - {x: 271, y: 42.44641}
+        - {x: 146, y: 38.44641}
+        - {x: 101, y: 45.44641}
+        - {x: 73, y: 45.44641}
+        - {x: 68, y: 42.44641}
+        - {x: 68, y: -44.55359}
+        - {x: 504, y: -44.55359}
+    - name: textos_Titulos_5
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 755
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 195.20917, y: 25.5}
+        - {x: -175.79083, y: 25.5}
+        - {x: -265.79083, y: 21.5}
+        - {x: -285.79083, y: 6.5}
+        - {x: -285.79083, y: -8.5}
+        - {x: -259.79083, y: -25.5}
+        - {x: 242.20917, y: -25.5}
+        - {x: 286.20917, y: -11.5}
+        - {x: 286.20917, y: 12.5}
+        - {x: 285.20917, y: 13.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

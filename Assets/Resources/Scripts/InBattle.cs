@@ -13,6 +13,7 @@ public class InBattle : MonoBehaviour {
 	public Text balaoText, valorInimigo;
 	private int atacou, ativaosFigheters;
 
+
 	// Use this for initialization
 	void Start () {
 		fighterTres.sprite = Resources.Load<Sprite> ("Sprites/"+PlayerPrefs.GetString("Lutador3"))as Sprite;
@@ -95,6 +96,7 @@ public class InBattle : MonoBehaviour {
 			oxigenio.SetActive (true);
 			oxigenio.transform.position = new Vector3 (fighter.transform.position.x, fighter.transform.position.y, 0);
 			ativaosFigheters = ativaosFigheters +1;
+
 		}if (PlayerPrefs.GetString ("Lutador2") == "Oxigenio") {
 			oxigenio.SetActive (true);
 			oxigenio.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);

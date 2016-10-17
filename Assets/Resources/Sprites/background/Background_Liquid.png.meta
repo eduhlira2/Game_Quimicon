@@ -1,0 +1,210 @@
+fileFormatVersion: 2
+guid: 123f1a1fb54bc0642bc4e0903b99496d
+timeCreated: 1476707340
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Background_Liquid_0
+    21300002: Background_Liquid_1
+    21300004: Background_Liquid_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Background_Liquid_0
+      rect:
+        serializedVersion: 2
+        x: 689
+        y: 889
+        width: 135
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -17.034698, y: 27.426208}
+        - {x: -27.034698, y: 15.4262085}
+        - {x: -27.034698, y: -22.573792}
+        - {x: -20.034698, y: -26.573792}
+        - {x: 27.965302, y: -26.573792}
+        - {x: 27.965302, y: 23.426208}
+        - {x: 26.965302, y: 27.426208}
+    - name: Background_Liquid_1
+      rect:
+        serializedVersion: 2
+        x: 941
+        y: 914
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+    - name: Background_Liquid_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2560
+        height: 837
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 506, y: 118.5}
+        - {x: 495, y: 122.5}
+        - {x: 489, y: 124.5}
+        - {x: 485, y: 125.5}
+        - {x: 475, y: 128.5}
+        - {x: 467, y: 130.5}
+        - {x: 457, y: 132.5}
+        - {x: 448, y: 133.5}
+        - {x: 428, y: 134.5}
+        - {x: 418, y: 133.5}
+        - {x: 410, y: 132.5}
+        - {x: 402, y: 130.5}
+        - {x: 396, y: 128.5}
+        - {x: 391, y: 126.5}
+        - {x: 374, y: 118.5}
+        - {x: 364, y: 112.5}
+        - {x: 347, y: 100.5}
+        - {x: 342, y: 98.5}
+        - {x: 339, y: 96.5}
+        - {x: 331, y: 92.5}
+        - {x: 321, y: 88.5}
+        - {x: 310, y: 85.5}
+        - {x: 309, y: 84.5}
+        - {x: 293, y: 85.5}
+        - {x: 284, y: 86.5}
+        - {x: 281, y: 88.5}
+        - {x: 276, y: 90.5}
+        - {x: 274, y: 90.5}
+        - {x: 260, y: 98.5}
+        - {x: 255, y: 102.5}
+        - {x: 247, y: 107.5}
+        - {x: 239, y: 113.5}
+        - {x: 229, y: 121.5}
+        - {x: 221, y: 128.5}
+        - {x: 209, y: 136.5}
+        - {x: 204, y: 140.5}
+        - {x: 193, y: 146.5}
+        - {x: 173, y: 156.5}
+        - {x: 163, y: 160.5}
+        - {x: 157, y: 162.5}
+        - {x: 146, y: 165.5}
+        - {x: 136, y: 167.5}
+        - {x: 98, y: 167.5}
+        - {x: 93, y: 166.5}
+        - {x: 86, y: 164.5}
+        - {x: 74, y: 160.5}
+        - {x: 66, y: 156.5}
+        - {x: 58, y: 151.5}
+        - {x: 48, y: 144.5}
+        - {x: 27, y: 126.5}
+        - {x: 19, y: 119.5}
+        - {x: 7, y: 109.5}
+        - {x: 3, y: 106.5}
+        - {x: -11, y: 96.5}
+        - {x: -16, y: 94.5}
+        - {x: -25, y: 88.5}
+        - {x: -27, y: 88.5}
+        - {x: -38, y: 84.5}
+        - {x: -50, y: 81.5}
+        - {x: -59, y: 80.5}
+        - {x: -60, y: 79.5}
+        - {x: -84, y: 79.5}
+        - {x: -85, y: 80.5}
+        - {x: -94, y: 81.5}
+        - {x: -109, y: 84.5}
+        - {x: -116, y: 86.5}
+        - {x: -125, y: 88.5}
+        - {x: -133, y: 92.5}
+        - {x: -148, y: 98.5}
+        - {x: -150, y: 98.5}
+        - {x: -165, y: 106.5}
+        - {x: -169, y: 108.5}
+        - {x: -178, y: 112.5}
+        - {x: -182, y: 114.5}
+        - {x: -191, y: 118.5}
+        - {x: -211, y: 126.5}
+        - {x: -217, y: 128.5}
+        - {x: -224, y: 130.5}
+        - {x: -232, y: 132.5}
+        - {x: -241, y: 134.5}
+        - {x: -253, y: 136.5}
+        - {x: -264, y: 137.5}
+        - {x: -277, y: 138.5}
+        - {x: -291, y: 138.5}
+        - {x: -304, y: 137.5}
+        - {x: -315, y: 136.5}
+        - {x: -320, y: 135.5}
+        - {x: -327, y: 134.5}
+        - {x: -336, y: 132.5}
+        - {x: -344, y: 130.5}
+        - {x: -351, y: 128.5}
+        - {x: -362, y: 124.5}
+        - {x: -377, y: 118.5}
+        - {x: -409, y: 102.5}
+        - {x: -420, y: 96.5}
+        - {x: -423, y: 94.5}
+        - {x: -434, y: 88.5}
+        - {x: -444, y: 82.5}
+        - {x: -446, y: 82.5}
+        - {x: -450, y: 80.5}
+        - {x: -459, y: 76.5}
+        - {x: -470, y: 72.5}
+        - {x: -482, y: 68.5}
+        - {x: -495, y: 65.5}
+        - {x: -503, y: 64.5}
+        - {x: -512, y: 63.5}
+        - {x: -512, y: -167.5}
+        - {x: 512, y: -167.5}
+        - {x: 512, y: 115.5}
+        - {x: 511, y: 116.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

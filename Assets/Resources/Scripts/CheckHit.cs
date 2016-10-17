@@ -9,7 +9,7 @@ public class CheckHit : MonoBehaviour {
 	public GameObject botaoAtacar, oxigenio, bromo, zinco;
 	public GameObject recipiente1, recipiente2, recipiente3;
 	public static float hitEnemy;
-	public static int statusEnemy;
+	public static int statusEnemy, empate, empates;
 	public Image elementoInimigo, imagem2;
 	public Text ataqueEscolhido, defesaInimigo;
 	public int numeroAtomicoInt;
@@ -22,6 +22,7 @@ public class CheckHit : MonoBehaviour {
 	void Start () {
 		CheckHit.statusEnemy = 0;
 		personagemNafila = 0;
+		empates = 0;
 	}
 	
 	// Update is called once per frame
@@ -47,9 +48,17 @@ public class CheckHit : MonoBehaviour {
 
 		if(hitChar < CheckHit.hitEnemy){
 			Debug.Log ("o cara te matou");
-			Invoke ("executarAnimacaoContra", 1);
+			Invoke ("executarAnimacaoContra", 2);
 			Invoke ("mudarImagemPlayer", 3);
-			personagemNafila = personagemNafila+1;
+
+		}
+		if(hitChar == CheckHit.hitEnemy){
+			empates = empates+1;
+			Invoke ("executarAnimacaoEmpate", 2);
+			Invoke("Empate", 5);
+
+		
+		
 		}
 		if(hitChar > CheckHit.hitEnemy && CheckHit.statusEnemy == 2){
 			Invoke ("executarAnimacao3", 3);
@@ -63,6 +72,7 @@ public class CheckHit : MonoBehaviour {
 			Invoke ("mudarImagemEnemy", 5);
 			Invoke ("executarAnimacao", 3);
 		}
+
 	}
 
 	void executarAnimacao(){
@@ -86,14 +96,48 @@ public class CheckHit : MonoBehaviour {
 
 	}
 	void executarAnimacaoContra(){
+		personagemNafila = personagemNafila+1;
 		character.GetComponent<Animator>().Play ("AtaqueEnemy");
 		balaoFala.SetActive (false);
 		//balaoFala.SetActive (false);
 		//enemy1.SetActive (false);
 	}
 
+	void executarAnimacaoEmpate(){
+		character.GetComponent<Animator>().Play ("Empate");
+		balaoFala.SetActive (false);
+	}
+
 	void matarOterceiro(){
 		enemy.SetActive (false);
+	}
+
+	void Empate(){
+		empate = Random.Range(0,2);
+		if(empate == 0 && empates == 1){
+			executarAnimacao();
+			Invoke("mudarImagemEnemy", 1);
+		}
+		if(empate == 0 && empates == 2){
+			executarAnimacao2();
+			Invoke("mudarImagemEnemy", 1);
+		}
+		if(empate == 0 && empates == 3){
+			executarAnimacao3();
+			Invoke("mudarImagemEnemy", 1);
+		}
+		if(empate == 1 && empates == 1 ){
+			executarAnimacaoContra();
+			Invoke("mudarImagemPlayer", 1);
+		}
+		if(empate == 1 && empates == 2 ){
+			executarAnimacaoContra();
+			Invoke("mudarImagemPlayer", 1);
+		}
+		if(empate == 1 && empates == 3 ){
+			executarAnimacaoContra();
+			Invoke("mudarImagemPlayer", 1);
+		}
 	}
 
 	void mudarImagemEnemy(){
@@ -140,7 +184,7 @@ public class CheckHit : MonoBehaviour {
 		if(personagemNafila == 5){
 			if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio") {
 				oxigenio.SetActive (false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente1.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
@@ -148,7 +192,7 @@ public class CheckHit : MonoBehaviour {
 			}
 			if (PlayerPrefs.GetString ("Lutador1") == "Zinco") {
 				zinco.SetActive (false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente1.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
@@ -156,7 +200,7 @@ public class CheckHit : MonoBehaviour {
 			}
 			if (PlayerPrefs.GetString ("Lutador1") == "Bromo") {
 				bromo.SetActive (false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente1.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
@@ -168,14 +212,14 @@ public class CheckHit : MonoBehaviour {
 			if (PlayerPrefs.GetString ("Lutador2") == "Oxigenio") {
 				oxigenio.SetActive (false);
 				recipiente2.SetActive(false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;
 			}
 			if (PlayerPrefs.GetString ("Lutador2") == "Zinco") {
 				zinco.SetActive (false);
-				jogador.sprite = null;
+				jogador.sprite = Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente2.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
@@ -183,7 +227,7 @@ public class CheckHit : MonoBehaviour {
 			}
 			if (PlayerPrefs.GetString ("Lutador2") == "Bromo") {
 				bromo.SetActive (false);
-				jogador.sprite = null;
+				jogador.sprite = Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente2.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
@@ -196,7 +240,7 @@ public class CheckHit : MonoBehaviour {
 			if (PlayerPrefs.GetString ("Lutador3") == "Oxigenio") {
 				oxigenio.SetActive (false);
 				recipiente3.SetActive(false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;
@@ -204,7 +248,7 @@ public class CheckHit : MonoBehaviour {
 			if (PlayerPrefs.GetString ("Lutador3") == "Zinco") {
 				zinco.SetActive (false);
 				recipiente3.SetActive(false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;
@@ -212,7 +256,7 @@ public class CheckHit : MonoBehaviour {
 			if (PlayerPrefs.GetString ("Lutador3") == "Bromo") {
 				bromo.SetActive (false);
 				recipiente3.SetActive(false);
-				jogador.sprite = null;
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;

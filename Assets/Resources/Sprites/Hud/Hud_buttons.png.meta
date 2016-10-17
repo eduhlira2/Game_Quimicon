@@ -1,0 +1,465 @@
+fileFormatVersion: 2
+guid: a611f910ec334ae47bd2e594586c81b9
+timeCreated: 1476708074
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Hud_buttons_0
+    21300002: Hud_buttons_1
+    21300004: Hud_buttons_2
+    21300006: Hud_buttons_3
+    21300008: Hud_buttons_4
+    21300010: Hud_buttons_5
+    21300012: Hud_buttons_6
+    21300014: Hud_buttons_7
+    21300016: Hud_buttons_8
+    21300018: Hud_buttons_9
+    21300020: Hud_buttons_10
+    21300022: Hud_buttons_11
+    21300024: Hud_buttons_12
+    21300026: Hud_buttons_13
+    21300028: Hud_buttons_14
+    21300030: Hud_buttons_15
+    21300032: Hud_buttons_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Hud_buttons_0
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 1355
+        width: 1323
+        height: 425
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 381.28088, y: -17.994385}
+        - {x: 381.28088, y: 18.005615}
+        - {x: 375.28088, y: 31.005615}
+        - {x: 345.28088, y: 51.005615}
+        - {x: 341.28088, y: 82.005615}
+        - {x: 338.28088, y: 89.005615}
+        - {x: 332.28088, y: 99.005615}
+        - {x: 321.28088, y: 111.005615}
+        - {x: 303.28088, y: 123.005615}
+        - {x: 299.28088, y: 123.005615}
+        - {x: 243.28088, y: 119.005615}
+        - {x: 224.28088, y: 123.005615}
+        - {x: 175.28088, y: 123.005615}
+        - {x: 165.28088, y: 108.005615}
+        - {x: 157.28088, y: 64.005615}
+        - {x: 105.28088, y: 80.005615}
+        - {x: 65.28088, y: 71.005615}
+        - {x: 15.280884, y: 80.005615}
+        - {x: -39.719116, y: 84.005615}
+        - {x: -52.719116, y: 75.005615}
+        - {x: -182.71912, y: 84.005615}
+        - {x: -205.71912, y: 82.005615}
+        - {x: -244.71912, y: 63.005615}
+        - {x: -260.71912, y: 79.005615}
+        - {x: -340.71912, y: 81.005615}
+        - {x: -366.71912, y: 66.005615}
+        - {x: -380.71912, y: 52.005615}
+        - {x: -380.71912, y: -29.994385}
+        - {x: -360.71912, y: -47.994385}
+        - {x: -312.71912, y: -80.994385}
+        - {x: -279.71912, y: -81.994385}
+        - {x: -207.71912, y: -44.994385}
+        - {x: -117.71912, y: -63.994385}
+        - {x: -51.719116, y: -81.994385}
+        - {x: -16.719116, y: -82.994385}
+        - {x: 8.280884, y: -60.994385}
+        - {x: 60.280884, y: -52.994385}
+        - {x: 96.28088, y: -54.994385}
+        - {x: 160.28088, y: -54.994385}
+        - {x: 159.28088, y: -79.994385}
+        - {x: 163.28088, y: -101.994385}
+        - {x: 189.28088, y: -121.994385}
+        - {x: 315.28088, y: -121.994385}
+        - {x: 345.28088, y: -100.994385}
+        - {x: 350.28088, y: -52.994385}
+        - {x: 379.28088, y: -30.994385}
+    - name: Hud_buttons_1
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 1066
+        width: 243
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69.97191, y: 51.74945}
+        - {x: -69.97191, y: -51.25055}
+        - {x: 69.02809, y: -51.25055}
+        - {x: 71.02809, y: -39.25055}
+        - {x: 71.02809, y: 51.74945}
+    - name: Hud_buttons_2
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1063
+        width: 241
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -58.269653, y: 52.02362}
+        - {x: -61.269653, y: 50.02362}
+        - {x: -69.26965, y: 44.02362}
+        - {x: -69.26965, y: -44.97638}
+        - {x: -66.26965, y: -50.97638}
+        - {x: 64.73035, y: -50.97638}
+        - {x: 70.73035, y: -45.97638}
+        - {x: 70.73035, y: 44.02362}
+        - {x: 64.73035, y: 52.02362}
+    - name: Hud_buttons_3
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 1066
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -68.66965, y: 51.74945}
+        - {x: -69.66965, y: 47.74945}
+        - {x: -69.66965, y: -42.25055}
+        - {x: -63.669647, y: -51.25055}
+        - {x: 70.33035, y: -51.25055}
+        - {x: 70.33035, y: 51.74945}
+    - name: Hud_buttons_4
+      rect:
+        serializedVersion: 2
+        x: 925
+        y: 1066
+        width: 242
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -69.86517, y: 51.74945}
+        - {x: -69.86517, y: -51.25055}
+        - {x: 70.13483, y: -51.25055}
+        - {x: 70.13483, y: 51.74945}
+    - name: Hud_buttons_5
+      rect:
+        serializedVersion: 2
+        x: 1389
+        y: 1053
+        width: 255
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -73.434814, y: 65.77081}
+        - {x: -73.434814, y: -54.229187}
+        - {x: -36.434814, y: -64.22919}
+        - {x: 73.565186, y: -64.22919}
+        - {x: 73.565186, y: 65.77081}
+    - name: Hud_buttons_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 828
+        width: 635
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 183, y: 32.83258}
+        - {x: 181, y: 39.83258}
+        - {x: 161, y: 50.83258}
+        - {x: -160, y: 50.83258}
+        - {x: -173, y: 46.83258}
+        - {x: -183, y: 32.83258}
+        - {x: -183, y: -36.16742}
+        - {x: -167, y: -50.16742}
+        - {x: 160, y: -50.16742}
+        - {x: 174, y: -45.16742}
+        - {x: 183, y: -30.16742}
+    - name: Hud_buttons_7
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 828
+        width: 638
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 173.3146, y: 47.83258}
+        - {x: 161.3146, y: 50.83258}
+        - {x: -154.6854, y: 50.83258}
+        - {x: -158.6854, y: 49.83258}
+        - {x: -170.6854, y: 45.83258}
+        - {x: -182.6854, y: 32.83258}
+        - {x: -183.6854, y: 26.83258}
+        - {x: -183.6854, y: -31.16742}
+        - {x: -173.6854, y: -44.16742}
+        - {x: -161.6854, y: -50.16742}
+        - {x: 166.3146, y: -50.16742}
+        - {x: 184.3146, y: -37.16742}
+        - {x: 184.3146, y: 29.83258}
+    - name: Hud_buttons_8
+      rect:
+        serializedVersion: 2
+        x: 1445
+        y: 865
+        width: 115
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -33.219116, y: 8.117981}
+        - {x: -33.219116, y: -11.882019}
+        - {x: -10.219116, y: -26.882019}
+        - {x: 16.780884, y: -26.882019}
+        - {x: 33.780884, y: -14.882019}
+        - {x: 33.780884, y: 10.117981}
+        - {x: 20.780884, y: 28.117981}
+        - {x: 0.7808838, y: 28.117981}
+        - {x: -3.2191162, y: 24.117981}
+    - name: Hud_buttons_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 635
+        width: 635
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 183, y: 31.803375}
+        - {x: 181, y: 39.803375}
+        - {x: 162, y: 50.803375}
+        - {x: -165, y: 50.803375}
+        - {x: -183, y: 37.803375}
+        - {x: -183, y: -36.196625}
+        - {x: -165, y: -50.196625}
+        - {x: 157, y: -50.196625}
+        - {x: 166, y: -48.196625}
+        - {x: 182, y: -33.196625}
+        - {x: 183, y: -31.196625}
+    - name: Hud_buttons_10
+      rect:
+        serializedVersion: 2
+        x: 680
+        y: 616
+        width: 638
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 184.19101, y: 32.873047}
+        - {x: 181.19101, y: 37.873047}
+        - {x: 163.19101, y: 50.873047}
+        - {x: -165.80899, y: 50.873047}
+        - {x: -183.80899, y: 37.873047}
+        - {x: -183.80899, y: -30.126953}
+        - {x: -171.80899, y: -45.126953}
+        - {x: -163.80899, y: -49.126953}
+        - {x: -158.80899, y: -50.126953}
+        - {x: 159.19101, y: -50.126953}
+        - {x: 164.19101, y: -49.126953}
+        - {x: 183.19101, y: -41.126953}
+        - {x: 184.19101, y: -27.126953}
+    - name: Hud_buttons_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 442
+        width: 635
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 180, y: 36.774155}
+        - {x: 164, y: 49.774155}
+        - {x: 156, y: 50.774155}
+        - {x: -158, y: 50.774155}
+        - {x: -165, y: 48.774155}
+        - {x: -168, y: 46.774155}
+        - {x: -183, y: 37.774155}
+        - {x: -183, y: -35.225845}
+        - {x: -164, y: -50.225845}
+        - {x: 160, y: -50.225845}
+        - {x: 181, y: -39.225845}
+        - {x: 183, y: -32.225845}
+        - {x: 183, y: 29.774155}
+    - name: Hud_buttons_12
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 404
+        width: 827
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 239.1427, y: -26.086517}
+        - {x: 239.1427, y: 27.913483}
+        - {x: 237.1427, y: 32.913483}
+        - {x: 228.1427, y: 41.913483}
+        - {x: 216.1427, y: 47.913483}
+        - {x: 205.1427, y: 50.913483}
+        - {x: -208.8573, y: 50.913483}
+        - {x: -228.8573, y: 42.913483}
+        - {x: -237.8573, y: 29.913483}
+        - {x: -237.8573, y: -26.086517}
+        - {x: -232.8573, y: -37.086517}
+        - {x: -212.8573, y: -50.086517}
+        - {x: 210.1427, y: -50.086517}
+        - {x: 230.1427, y: -41.086517}
+        - {x: 236.1427, y: -33.086517}
+    - name: Hud_buttons_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 246
+        width: 635
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 183, y: 37.019104}
+        - {x: 164, y: 51.019104}
+        - {x: -160, y: 51.019104}
+        - {x: -169, y: 48.019104}
+        - {x: -183, y: 37.019104}
+        - {x: -183, y: -32.980896}
+        - {x: -169, y: -47.980896}
+        - {x: -160, y: -49.980896}
+        - {x: 159, y: -49.980896}
+        - {x: 177, y: -41.980896}
+        - {x: 183, y: -28.980896}
+    - name: Hud_buttons_14
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 208
+        width: 828
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 238.71799, y: 27.658432}
+        - {x: 235.71799, y: 33.658432}
+        - {x: 228.71799, y: 42.658432}
+        - {x: 212.71799, y: 50.658432}
+        - {x: -209.28201, y: 50.658432}
+        - {x: -228.28201, y: 43.658432}
+        - {x: -238.28201, y: 28.658432}
+        - {x: -238.28201, y: -26.341568}
+        - {x: -235.28201, y: -32.341568}
+        - {x: -224.28201, y: -42.341568}
+        - {x: -213.28201, y: -47.341568}
+        - {x: -208.28201, y: -49.341568}
+        - {x: 215.71799, y: -49.341568}
+        - {x: 238.71799, y: -33.341568}
+    - name: Hud_buttons_15
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 67
+        width: 356
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -97.4382, y: 40.04382}
+        - {x: -102.4382, y: 38.04382}
+        - {x: -102.4382, y: -38.95618}
+        - {x: 93.5618, y: -38.95618}
+        - {x: 103.5618, y: -27.95618}
+        - {x: 103.5618, y: 27.04382}
+        - {x: 96.5618, y: 40.04382}
+    - name: Hud_buttons_16
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 0
+        width: 638
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 184.39551, y: 29}
+        - {x: 176.39551, y: 41}
+        - {x: 160.39551, y: 50}
+        - {x: -156.60449, y: 50}
+        - {x: -170.60449, y: 46}
+        - {x: -183.60449, y: 31}
+        - {x: -183.60449, y: -33}
+        - {x: -168.60449, y: -50}
+        - {x: 164.39551, y: -50}
+        - {x: 168.39551, y: -48}
+        - {x: 182.39551, y: -36}
+        - {x: 184.39551, y: -31}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

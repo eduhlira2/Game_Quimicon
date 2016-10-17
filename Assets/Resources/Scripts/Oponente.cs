@@ -29,7 +29,7 @@ public class Oponente : MonoBehaviour {
 
 
 		if(selected == 0 && aux == 1){
-			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
+			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"oxigenio_face")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
 			PlayerPrefs.SetString("Oponente1", "Oxigenio");
 			Oponente.massaAtomicaFloat = 15.9f;
@@ -39,7 +39,7 @@ public class Oponente : MonoBehaviour {
 			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 1){
-			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
+			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"zinco_face")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
 			aux = aux+1;
 			Oponente.massaAtomicaFloat = 65.4f;
@@ -49,7 +49,7 @@ public class Oponente : MonoBehaviour {
 			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 1){
-			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
+			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"bromo_face")as Sprite;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 			aux = aux+1;
 			Oponente.massaAtomicaFloat = 79.9f;
@@ -61,7 +61,7 @@ public class Oponente : MonoBehaviour {
 
 
 		if(selected == 0 && aux == 2f){
-			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
+			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"oxigenio_face")as Sprite;
 			Oponente.massaAtomicaFloat = 15.9f;
 			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
@@ -70,7 +70,7 @@ public class Oponente : MonoBehaviour {
 			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 2f){
-			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
+			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"zinco_face")as Sprite;
 			aux = aux+1;
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
@@ -79,7 +79,7 @@ public class Oponente : MonoBehaviour {
 			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 2f){
-			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
+			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"bromo_face")as Sprite;
 			aux = aux+1;
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
@@ -90,21 +90,21 @@ public class Oponente : MonoBehaviour {
 
 
 		if(selected == 0 && aux == 3f){
-			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Oxigenio")as Sprite;
+			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"oxigenio_face")as Sprite;
 			Oponente.massaAtomicaFloat = 15.9f;
 			Oponente.numeroAtomicoInt = 8;
 			PlayerPrefs.SetString("Oponente3", "Oxigenio");
 			Oponente.oponenteTerceiro = 1;
 		}
 		if(selected == 1 && aux == 3f){
-			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Zinco")as Sprite;
+			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"zinco_face")as Sprite;
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente3", "Zinco");
 			Oponente.oponenteTerceiro = 2;
 		}
 		if(selected == 2  && aux == 3f){
-			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
+			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"bromo_face")as Sprite;
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente3", "Bromo");

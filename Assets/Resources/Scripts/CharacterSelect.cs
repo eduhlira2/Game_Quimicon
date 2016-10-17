@@ -44,9 +44,9 @@ public class CharacterSelect : MonoBehaviour {
 
 	public void ZerarPlayers(){
 		this.aux = 0;
-		fighter.sprite = Resources.Load<Sprite> ("Sprites/Press_X")as Sprite;			
-		fighter2.sprite =Resources.Load<Sprite> ("Sprites/Press_X")as Sprite;	
-		fighter3.sprite = Resources.Load<Sprite> ("Sprites/Press_X")as Sprite;
+		fighter.sprite = Resources.Load<Sprite> ("Sprites/Hud/becker")as Sprite;			
+		fighter2.sprite =Resources.Load<Sprite> ("Sprites/Hud/becker")as Sprite;	
+		fighter3.sprite = Resources.Load<Sprite> ("Sprites/Hud/becker")as Sprite;
 
 		battle.SetActive(false);
 	}
