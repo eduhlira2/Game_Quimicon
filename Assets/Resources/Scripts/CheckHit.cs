@@ -7,7 +7,7 @@ public class CheckHit : MonoBehaviour {
 	public float  hitChar, massaAtomicaFloat;
 	public GameObject character, enemy, balaoFala, enemy1, enemy2, enemy3, controladorBotoes, controladorBotoes2, controladorBotoesPai;
 	public GameObject botaoAtacar, oxigenio, bromo, zinco, TurnAnimation, valorEnemy, ValorPlayer;
-	public GameObject recipiente1, recipiente2, recipiente3;
+	public GameObject recipiente1, recipiente2, recipiente3, tutoAnim;
 	public static float hitEnemy;
 	public static int statusEnemy, empate, empates, comensaldaMorte, comensaldaMorte2;
 	public Image elementoInimigo, imagem2;
@@ -83,10 +83,23 @@ public class CheckHit : MonoBehaviour {
 	}*/
 
 	public void checarHit(){
+
+		if(empates == 0){
+			Invoke("AnimacaoEnemy", 6.5f);
+		}
+
 		Invoke ("executarAcoes", 1.5f);
 
 		botaoAtacar.SetActive (false);
 	}
+
+	void AnimacaoEnemy(){
+		tutoAnim.SetActive (true);
+		Time.timeScale = 0.0f;
+		tutoAnim.GetComponent<Animator>().Play ("tutoEnemy");
+		PlayerPrefs.SetInt ("concluirTutorial", 1);
+	}
+
 	void executarAcoes(){
 		Debug.Log ("O valor de hitChar é: " + hitChar);
 		Debug.Log ("O valor de hitEnemy é: " + CheckHit.hitEnemy);

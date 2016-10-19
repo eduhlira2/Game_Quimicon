@@ -14,6 +14,8 @@ public class InBattle : MonoBehaviour {
 	private int atacou, ativaosFigheters;
 	public static int contadorminhaVez;
 
+
+
 	// Use this for initialization
 	void Start () {
 
