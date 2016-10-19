@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: dc17decc28719284f923273ddff75b82
+timeCreated: 1476884487
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: vez do oponente e sua_0
+    21300002: vez do oponente e sua_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: vez do oponente e sua_0
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 340
+        width: 915
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 181.8399, y: -84.16995}
+        - {x: 241.8399, y: -97.16995}
+        - {x: 322.8399, y: -90.16995}
+        - {x: 338.8399, y: -66.16995}
+        - {x: 338.8399, y: -22.169952}
+        - {x: 334.8399, y: -6.1699524}
+        - {x: 317.8399, y: 6.8300476}
+        - {x: 61.839905, y: 5.8300476}
+        - {x: 50.839905, y: 9.830048}
+        - {x: -29.160095, y: 9.830048}
+        - {x: -146.1601, y: 3.8300476}
+        - {x: -201.1601, y: 9.830048}
+        - {x: -308.1601, y: 9.830048}
+        - {x: -334.1601, y: 2.8300476}
+        - {x: -346.1601, y: -15.169952}
+        - {x: -346.1601, y: -70.16995}
+        - {x: -325.1601, y: -88.16995}
+        - {x: -230.1601, y: -92.16995}
+        - {x: -177.1601, y: -84.16995}
+        - {x: -122.160095, y: -87.16995}
+        - {x: -99.160095, y: -102.16995}
+        - {x: -23.160095, y: -102.16995}
+        - {x: 2.8399048, y: -97.16995}
+        - {x: 84.839905, y: -98.16995}
+        - {x: 105.839905, y: -102.16995}
+        - {x: 157.8399, y: -102.16995}
+      - - {x: 311.8399, y: 3.8300476}
+        - {x: 351.8399, y: 6.8300476}
+        - {x: 360.8399, y: 19.830048}
+        - {x: 360.8399, y: 77.83005}
+        - {x: 351.8399, y: 98.83005}
+        - {x: 307.8399, y: 101.83005}
+        - {x: 281.8399, y: 97.83005}
+        - {x: 265.8399, y: 107.83005}
+        - {x: 207.8399, y: 107.83005}
+        - {x: 188.8399, y: 103.83005}
+        - {x: 38.839905, y: 104.83005}
+        - {x: 7.839905, y: 83.83005}
+        - {x: -17.160095, y: 99.83005}
+        - {x: -134.1601, y: 103.83005}
+        - {x: -180.1601, y: 100.83005}
+        - {x: -345.1601, y: 106.83005}
+        - {x: -365.1601, y: 83.83005}
+        - {x: -365.1601, y: 17.830048}
+        - {x: -333.1601, y: 3.8300476}
+        - {x: 26.839905, y: 3.8300476}
+        - {x: 44.839905, y: 5.8300476}
+        - {x: 237.8399, y: 4.8300476}
+        - {x: 249.8399, y: 3.8300476}
+    - name: vez do oponente e sua_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1283
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 512, y: -57.5}
+        - {x: 512, y: 44.5}
+        - {x: 506, y: 51.5}
+        - {x: -56, y: 51.5}
+        - {x: -69, y: 43.5}
+        - {x: -79, y: 34.5}
+        - {x: -84, y: 25.5}
+        - {x: -84, y: -52.5}
+        - {x: -83, y: -56.5}
+        - {x: -51, y: -66.5}
+        - {x: -7, y: -66.5}
+        - {x: 56, y: -46.5}
+        - {x: 80, y: -66.5}
+        - {x: 93, y: -66.5}
+        - {x: 135, y: -58.5}
+        - {x: 194, y: -63.5}
+        - {x: 347, y: -62.5}
+        - {x: 359, y: -51.5}
+        - {x: 359, y: -60.5}
+        - {x: 370, y: -66.5}
+        - {x: 510, y: -66.5}
+      - - {x: -266, y: 51.5}
+        - {x: -511, y: 51.5}
+        - {x: -512, y: 50.5}
+        - {x: -512, y: -11.5}
+        - {x: -485, y: -61.5}
+        - {x: -275, y: -61.5}
+        - {x: -264, y: -51.5}
+        - {x: -263, y: -49.5}
+        - {x: -263, y: 40.5}
+      - - {x: -234, y: 59.5}
+        - {x: -253, y: 33.5}
+        - {x: -253, y: -51.5}
+        - {x: -250, y: -61.5}
+        - {x: -94, y: -61.5}
+        - {x: -94, y: 43.5}
+        - {x: -106, y: 59.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

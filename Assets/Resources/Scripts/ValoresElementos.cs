@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class ValoresElementos : MonoBehaviour {
 
-	public Text massaAtomica, numeroAtomico;
+	public Text massaAtomica, numeroAtomico, ataqueEscolhido ;
 	public static float massaAtomicaFloat;
-	public static int numeroAtomicoInt;
+	public static int numeroAtomicoInt, personagemSelecionado;
 	public string nomeElemento;
+	public GameObject controladorBotoes, botaoAtacar;
 	public Image jogador;
 
 	// Use this for initialization
@@ -21,8 +22,15 @@ public class ValoresElementos : MonoBehaviour {
 	}
 
 	public void MudarValores(string ToSave){
+		
 
 		nomeElemento = ToSave;
+		ataqueEscolhido.text = "0";
+
+		controladorBotoes.SetActive(true);
+		botaoAtacar.SetActive(false);
+		ValoresElementos.personagemSelecionado = 2;
+
 
 		if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio" && nomeElemento == "Oxigenio") {
 			massaAtomicaFloat = 15.9f; numeroAtomicoInt = 8;

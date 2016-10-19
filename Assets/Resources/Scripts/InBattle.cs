@@ -7,15 +7,18 @@ using UnityEngine.UI;
 public class InBattle : MonoBehaviour {
 
 	public Image fighter, fighterDois, fighterTres;
-	public GameObject lutador, lutadorDois, lutadorTres, controladorBotoes, balaoFala;
+	public GameObject lutador, lutadorDois, lutadorTres, controladorBotoes, balaoFala, botaoAtacar;
 	public GameObject bromo, zinco, oxigenio;
 	public Text ataqueEscolhido, defesaInimigo;
 	public Text balaoText, valorInimigo;
 	private int atacou, ativaosFigheters;
-
+	public static int contadorminhaVez;
 
 	// Use this for initialization
 	void Start () {
+
+		controladorBotoes.SetActive(false);
+
 		fighterTres.sprite = Resources.Load<Sprite> ("Sprites/"+PlayerPrefs.GetString("Lutador3"))as Sprite;
 		lutadorTres = Resources.Load<GameObject> ("Prefabs/"+PlayerPrefs.GetString("Lutador3"))as GameObject;
 
@@ -31,15 +34,20 @@ public class InBattle : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
+		
 	}
 
 	public void ataqueMassaAtomica(){
+		botaoAtacar.SetActive(true);
 		atacou = 1;
+		InBattle.contadorminhaVez=contadorminhaVez+1;
 		balaoText.text = " Use a massa atomica!!"; 
 		ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
 	}
 
 	public void ataqueNumeroAtomico(){
+		InBattle.contadorminhaVez=contadorminhaVez+1;
+		botaoAtacar.SetActive(true);
 		atacou = 2;
 		balaoText.text = " Use o número Atomico!!"; 
 		ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());

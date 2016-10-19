@@ -49,6 +49,7 @@
      <Compile Include="Assets\Resources\Scripts\CheckHit.cs" />
      <Compile Include="Assets\Resources\Scripts\InBattle.cs" />
      <Compile Include="Assets\Resources\Scripts\Oponente.cs" />
+     <Compile Include="Assets\Resources\Scripts\PauseTime.cs" />
      <Compile Include="Assets\Resources\Scripts\ShowElement.cs" />
      <Compile Include="Assets\Resources\Scripts\ShowInfo.cs" />
      <Compile Include="Assets\Resources\Scripts\SkipScene.cs" />

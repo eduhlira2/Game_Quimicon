@@ -6,20 +6,22 @@ public class CheckHit : MonoBehaviour {
 
 	public float  hitChar, massaAtomicaFloat;
 	public GameObject character, enemy, balaoFala, enemy1, enemy2, enemy3, controladorBotoes, controladorBotoes2, controladorBotoesPai;
-	public GameObject botaoAtacar, oxigenio, bromo, zinco;
+	public GameObject botaoAtacar, oxigenio, bromo, zinco, TurnAnimation, valorEnemy, ValorPlayer;
 	public GameObject recipiente1, recipiente2, recipiente3;
 	public static float hitEnemy;
-	public static int statusEnemy, empate, empates;
+	public static int statusEnemy, empate, empates, comensaldaMorte, comensaldaMorte2;
 	public Image elementoInimigo, imagem2;
 	public Text ataqueEscolhido, defesaInimigo;
 	public int numeroAtomicoInt;
-	private int personagemNafila;
-	public static bool Atacou;
-	public Image jogador;
+	private int personagemNafila, atacouMA, atacouNM;
+	public static bool Atacou, personagem1Morto;
+	public Image jogador;	
+	public bool ultimoEnemy;
 
 
 	// Use this for initialization
 	void Start () {
+		personagem1Morto = false;
 		CheckHit.statusEnemy = 0;
 		personagemNafila = 0;
 		empates = 0;
@@ -28,6 +30,49 @@ public class CheckHit : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		// isso aqui nao esta certo, isso eh um erro
+		if( InBattle.contadorminhaVez == 3){
+			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
+		}
+
+		if(CheckHit.comensaldaMorte == 3){
+			enemy.SetActive(false);
+			character.SetActive(false);
+			enemy3.SetActive(false);
+			controladorBotoesPai.SetActive(false);
+			controladorBotoes.SetActive(false);
+			controladorBotoes2.SetActive(false);
+			Debug.Log("Venceu Porra");
+		}
+		if(CheckHit.comensaldaMorte2 == 3){
+			Debug.Log("Perdeu merda");
+		}
+
+
+
+		if (CheckHit.Atacou == true && ValoresElementos.personagemSelecionado == 1) {
+			controladorBotoesPai.SetActive(true);
+			controladorBotoes2.SetActive (true);
+			controladorBotoes.SetActive (true);
+			botaoAtacar.SetActive (false);
+
+		}
+		if(atacouNM == 1 && ValoresElementos.personagemSelecionado == 1){
+			controladorBotoesPai.SetActive(true);
+			controladorBotoes.SetActive (false);
+			controladorBotoes2.SetActive (true);
+			botaoAtacar.SetActive (false);
+			ValoresElementos.personagemSelecionado = 1;
+			atacouNM = 0;
+	}
+		if(atacouMA == 1 && ValoresElementos.personagemSelecionado == 1){
+			controladorBotoesPai.SetActive(true);
+			controladorBotoes2.SetActive (false);
+			controladorBotoes.SetActive (true);
+			botaoAtacar.SetActive (false);
+			atacouNM = 0;
+			ValoresElementos.personagemSelecionado = 1;
+		}
 	}
 
 	public void converterChar(Text valorChar){
@@ -109,6 +154,7 @@ public class CheckHit : MonoBehaviour {
 	}
 
 	void matarOterceiro(){
+		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
 		enemy.SetActive (false);
 	}
 
@@ -141,7 +187,13 @@ public class CheckHit : MonoBehaviour {
 	}
 
 	void mudarImagemEnemy(){
+		if(InBattle.contadorminhaVez == 2 || InBattle.contadorminhaVez == 3){
+			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
+		}
+		
+		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
 		if (CheckHit.statusEnemy == 1) {
+			CheckHit.Atacou = false;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/" + PlayerPrefs.GetString ("Oponente2"))as Sprite;
 			ataqueEscolhido.text = "0";
 			defesaInimigo.text = "0";
@@ -156,6 +208,7 @@ public class CheckHit : MonoBehaviour {
 			}
 		}
 			if (CheckHit.statusEnemy == 2) {
+				//CheckHit.Atacou = false;
 				elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/" + PlayerPrefs.GetString ("Oponente3"))as Sprite;
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
@@ -168,18 +221,26 @@ public class CheckHit : MonoBehaviour {
 				if (Oponente.oponenteTerceiro == 3) {
 					Oponente.ataqueDefesa = 3;
 				}
+			 //ultimoEnemy = true;
 		}
-		if (CheckHit.Atacou == true) {
+		if (CheckHit.Atacou == true && InBattle.contadorminhaVez != 2) {
 			controladorBotoesPai.SetActive(true);
 			controladorBotoes2.SetActive (true);
 			controladorBotoes.SetActive (true);
-			botaoAtacar.SetActive (true);
+			botaoAtacar.SetActive (false);
 		}
-		if (CheckHit.Atacou == false) {
+		if (CheckHit.Atacou == false && ultimoEnemy == false) {
+			TurnAnimation.GetComponent<Animator>().Play ("vez)Oponente");
 			Invoke ("ataqueInimigo", 3);
 		}
 	}
 	void mudarImagemPlayer(){
+		CheckHit.comensaldaMorte2 = CheckHit.comensaldaMorte2+1;
+		personagem1Morto = true;
+		if(CheckHit.Atacou == true){
+			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
+		}
+
 		Debug.Log("O valor de personagemNafila eh: "+ personagemNafila);
 		if(personagemNafila == 5){
 			if (PlayerPrefs.GetString ("Lutador1") == "Oxigenio") {
@@ -264,24 +325,20 @@ public class CheckHit : MonoBehaviour {
 			Debug.Log("entrou no personagem1");
 		}
 
-		if (CheckHit.Atacou == true) {
-			controladorBotoesPai.SetActive(true);
-			controladorBotoes2.SetActive (true);
-			controladorBotoes.SetActive (true);
-			botaoAtacar.SetActive (true);
-		}
+
 		if (CheckHit.Atacou == false) {
 			Invoke ("ataqueInimigo", 3);
 		}
-	
-
+		if (InBattle.contadorminhaVez == 2) {
+			Invoke ("ataqueInimigo", 3);
+		}
 	}
 
 	void ataqueInimigo(){
 		int rand;
 		rand = Random.Range(0,2);
 
-		if(rand >= 0 && CheckHit.Atacou == false){
+		if(rand == 0 && CheckHit.Atacou == false){
 			if(Oponente.ataqueDefesa == 1){
 				massaAtomicaFloat = 15.9f;
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());
@@ -294,12 +351,15 @@ public class CheckHit : MonoBehaviour {
 				massaAtomicaFloat = 79.9f;
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());
 			}
-			controladorBotoesPai.SetActive(true);
-			controladorBotoes2.SetActive (false);
-			controladorBotoes.SetActive (true);
-			botaoAtacar.SetActive (true);
+			atacouMA = 1;
+			if(personagem1Morto == false){
+				controladorBotoesPai.SetActive(true);
+				controladorBotoes.SetActive (true);
+				controladorBotoes2.SetActive (false);
+				botaoAtacar.SetActive (false);
+			}
 		}
-		if(rand <= 2 && rand >=1){
+		if( rand ==1 && CheckHit.Atacou == false){
 			if(Oponente.ataqueDefesa == 1  && CheckHit.Atacou == false){
 				numeroAtomicoInt = 8;
 				defesaInimigo.text = ((numeroAtomicoInt).ToString());
@@ -312,11 +372,16 @@ public class CheckHit : MonoBehaviour {
 				numeroAtomicoInt = 35;
 				defesaInimigo.text = ((numeroAtomicoInt).ToString());
 			}
-			controladorBotoesPai.SetActive(true);
-			controladorBotoes.SetActive (false);
-			controladorBotoes2.SetActive (true);
-			botaoAtacar.SetActive (true);
+			atacouNM = 1;
+			if(personagem1Morto == false){
+				controladorBotoesPai.SetActive(true);
+				controladorBotoes.SetActive (false);
+				controladorBotoes2.SetActive (true);
+				botaoAtacar.SetActive (false);
+
 		}
-	CheckHit.Atacou = true;
+	
 	}
+		CheckHit.Atacou = true;
+  }
 }
