@@ -82,5 +82,21 @@ public class ValoresElementos : MonoBehaviour {
 			numeroAtomico.text = ((numeroAtomicoInt).ToString());
 			jogador.sprite = Resources.Load<Sprite> ("Sprites/"+"Bromo")as Sprite;
 		}
+		if (PlayerPrefs.GetString ("Lutador1") == "Bario" && nomeElemento == "Bario") {
+			massaAtomicaFloat = 137.3f; numeroAtomicoInt = 56;
+			massaAtomica.text = ((massaAtomicaFloat).ToString());
+			numeroAtomico.text = ((numeroAtomicoInt).ToString());
+			jogador.sprite = Resources.Load<Sprite> ("Sprites/"+"Bario")as Sprite;
+		}if (PlayerPrefs.GetString ("Lutador2") == "Bario" && nomeElemento == "Bario") {
+			massaAtomicaFloat = 137.3f; numeroAtomicoInt = 56;
+			massaAtomica.text = ((massaAtomicaFloat).ToString());
+			numeroAtomico.text = ((numeroAtomicoInt).ToString());
+			jogador.sprite = Resources.Load<Sprite> ("Sprites/"+"Bario")as Sprite;
+		}if (PlayerPrefs.GetString ("Lutador3") == "Bario" && nomeElemento == "Bario") {
+			massaAtomicaFloat = 137.3f; numeroAtomicoInt = 56;
+			massaAtomica.text = ((massaAtomicaFloat).ToString());
+			numeroAtomico.text = ((numeroAtomicoInt).ToString());
+			jogador.sprite = Resources.Load<Sprite> ("Sprites/"+"Bario")as Sprite;
+		}
 	}
 }

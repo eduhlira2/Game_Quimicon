@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ShowElement : MonoBehaviour {
 
-	public GameObject elemento;
+	public GameObject elemento, elemento2;
 	public string K, L, M, N, O, P, Q,aux_string;
 	public Text nEletrons;
 	public static int eletrons;
@@ -14,7 +14,7 @@ public class ShowElement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-
+		PlayerPrefs.SetInt("QtdEletrons", 56);
 		// PlayerPrefs.SetInt("QtdEletrons",0);
 		eletrons= PlayerPrefs.GetInt("QtdEletrons");
 		nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
@@ -60,8 +60,18 @@ public class ShowElement : MonoBehaviour {
 		
 		//Cria o Bromo
 		if (K == "2" && L == "8" && M == "18" && N == "8" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 35){
+			elemento2.SetActive(true);
+			ShowElement.eletrons=ShowElement.eletrons - 35;
+			PlayerPrefs.SetInt("QtdEletrons", ShowElement.eletrons); 
+			nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
+			ShowElement.Bromo = 1;
+			ShowElement.qtdbromo = 1;
+			PlayerPrefs.SetInt("Bromo", ShowElement.Bromo);
+		}
+		//Cria o Bario
+		if (K == "2" && L == "8" && M == "18" && N == "18" && O == "8" && P == "2" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 56){
 			elemento.SetActive(true);
-			ShowElement.eletrons=ShowElement.eletrons - 36;
+			ShowElement.eletrons=ShowElement.eletrons - 56;
 			PlayerPrefs.SetInt("QtdEletrons", ShowElement.eletrons); 
 			nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
 			ShowElement.Bromo = 1;

@@ -278,6 +278,10 @@ public class CheckHit : MonoBehaviour {
 				if (Oponente.oponenteTerceiro == 3) {
 					Oponente.ataqueDefesa = 3;
 				}
+			if (Oponente.oponenteTerceiro == 4) {
+				Oponente.ataqueDefesa = 4;
+			}
+
 			 //ultimoEnemy = true;
 		}
 		if (CheckHit.Atacou == true && InBattle.contadorminhaVez == 2) {
@@ -324,6 +328,13 @@ public class CheckHit : MonoBehaviour {
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				}
+			if (PlayerPrefs.GetString ("Lutador1") == "Bario") {
+				bromo.SetActive (false);
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
+				recipiente1.SetActive(false);
+				ataqueEscolhido.text = "0";
+				defesaInimigo.text = "0";
+			}
 			Debug.Log("entrou no personagem3");
 		}
 
@@ -352,6 +363,13 @@ public class CheckHit : MonoBehaviour {
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;
 			}
+			if (PlayerPrefs.GetString ("Lutador2") == "Bario") {
+				bromo.SetActive (false);
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
+				recipiente1.SetActive(false);
+				ataqueEscolhido.text = "0";
+				defesaInimigo.text = "0";
+			}
 			Debug.Log("entrou no personagem2");
 		}
 		if(personagemNafila == 1){
@@ -379,6 +397,13 @@ public class CheckHit : MonoBehaviour {
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;
+			}
+			if (PlayerPrefs.GetString ("Lutador3") == "Bario") {
+				bromo.SetActive (false);
+				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
+				recipiente1.SetActive(false);
+				ataqueEscolhido.text = "0";
+				defesaInimigo.text = "0";
 			}
 			Debug.Log("entrou no personagem1");
 		}
@@ -409,6 +434,10 @@ public class CheckHit : MonoBehaviour {
 				massaAtomicaFloat = 79.9f;
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());
 			}
+			if(Oponente.ataqueDefesa == 4){
+				massaAtomicaFloat = 10.8f;
+				defesaInimigo.text = ((massaAtomicaFloat).ToString());
+			}
 			atacouMA = 1;
 			if(personagem1Morto == false){
 				controladorBotoesPai.SetActive(true);
@@ -428,6 +457,10 @@ public class CheckHit : MonoBehaviour {
 			}
 			if(Oponente.ataqueDefesa == 3){
 				numeroAtomicoInt = 35;
+				defesaInimigo.text = ((numeroAtomicoInt).ToString());
+			}
+			if(Oponente.ataqueDefesa == 4){
+				numeroAtomicoInt = 5;
 				defesaInimigo.text = ((numeroAtomicoInt).ToString());
 			}
 			atacouNM = 1;

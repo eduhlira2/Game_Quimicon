@@ -25,7 +25,7 @@ public class Oponente : MonoBehaviour {
 	}
 
 	void mostrarInimigos(){
-		selected = Random.Range(0,3);
+		selected = Random.Range(0,4);
 
 
 		if(selected == 0 && aux == 1){
@@ -58,6 +58,16 @@ public class Oponente : MonoBehaviour {
 			Oponente.ataqueDefesa = 3;
 			mostrarInimigos();
 		}
+		if(selected == 3  && aux == 1){
+			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"boro_face")as Sprite;
+			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/"+"Boro")as Sprite;
+			aux = aux+1;
+			Oponente.massaAtomicaFloat = 10.8f;
+			Oponente.numeroAtomicoInt = 5 ;
+			PlayerPrefs.SetString("Oponente1", "Boro");
+			Oponente.ataqueDefesa = 4;
+			mostrarInimigos();
+		}
 
 
 		if(selected == 0 && aux == 2f){
@@ -87,6 +97,16 @@ public class Oponente : MonoBehaviour {
 			Oponente.oponenteSegundo = 3;
 			mostrarInimigos();
 		}
+		if(selected == 3  && aux == 2f){
+			fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/"+"boro_face")as Sprite;
+
+			aux = aux+1;
+			Oponente.massaAtomicaFloat = 10.8f;
+			Oponente.numeroAtomicoInt = 5 ;
+			PlayerPrefs.SetString("Oponente2", "Boro");
+			Oponente.ataqueDefesa = 4;
+			mostrarInimigos();
+		}
 
 
 		if(selected == 0 && aux == 3f){
@@ -109,6 +129,15 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente3", "Bromo");
 			Oponente.oponenteTerceiro = 3;
+		}
+		if(selected == 3  && aux == 3f){
+			fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/"+"boro_face")as Sprite;
+
+			Oponente.massaAtomicaFloat = 10.8f;
+			Oponente.numeroAtomicoInt = 5 ;
+			PlayerPrefs.SetString("Oponente3", "Boro");
+			Oponente.ataqueDefesa = 4;
+			mostrarInimigos();
 		}
 
 

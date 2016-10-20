@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: 626056c3d28fae64182cf98ba6296df3
+timeCreated: 1476970462
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Hands_tutorial_0
+    21300002: Hands_tutorial_1
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 512
+  textureSettings:
+    filterMode: 1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Hands_tutorial_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 529
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -128, y: 128}
+        - {x: -128, y: -128}
+        - {x: 128, y: -128}
+        - {x: 128, y: 128}
+      - - {x: -124, y: 124}
+        - {x: 124, y: 124}
+        - {x: 124, y: -124}
+        - {x: -124, y: -124}
+      - - {x: -27, y: 77}
+        - {x: -79, y: 13}
+        - {x: -79, y: -35}
+        - {x: -34, y: -115}
+        - {x: -28, y: -122}
+        - {x: 64, y: -122}
+        - {x: 83, y: -119}
+        - {x: 95, y: -81}
+        - {x: 95, y: -1}
+        - {x: 16, y: 77}
+    - name: Hands_tutorial_1
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 0
+        width: 529
+        height: 530
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -127.98302, y: 128}
+        - {x: -127.98302, y: -128}
+        - {x: 129.01698, y: -128}
+        - {x: 129.01698, y: 128}
+      - - {x: -122.98302, y: 124}
+        - {x: 125.01698, y: 124}
+        - {x: 125.01698, y: -124}
+        - {x: -122.98302, y: -124}
+      - - {x: -49.983017, y: 61}
+        - {x: -78.98302, y: -2}
+        - {x: -78.98302, y: -63}
+        - {x: -37.983017, y: -122}
+        - {x: 66.01698, y: -122}
+        - {x: 82.01698, y: -88}
+        - {x: 82.01698, y: 4}
+        - {x: 20.016983, y: 61}
+      - - {x: -83.98302, y: 52}
+        - {x: -85.98302, y: 50}
+        - {x: -85.98302, y: 31}
+        - {x: -83.98302, y: 29}
+        - {x: -47.983017, y: 29}
+        - {x: -45.983017, y: 31}
+        - {x: -45.983017, y: 50}
+        - {x: -47.983017, y: 52}
+      - - {x: 35.016983, y: 53}
+        - {x: 33.016983, y: 51}
+        - {x: 33.016983, y: 31}
+        - {x: 35.016983, y: 29}
+        - {x: 71.01698, y: 29}
+        - {x: 73.01698, y: 31}
+        - {x: 73.01698, y: 51}
+        - {x: 71.01698, y: 53}
+      - - {x: -52.983017, y: 101}
+        - {x: -62.983017, y: 101}
+        - {x: -71.98302, y: 93}
+        - {x: -73.98302, y: 87}
+        - {x: -73.98302, y: 80}
+        - {x: -54.983017, y: 66}
+        - {x: -44.983017, y: 62}
+        - {x: -38.983017, y: 62}
+        - {x: -28.983017, y: 77}
+        - {x: -28.983017, y: 84}
+      - - {x: 37.016983, y: 100}
+        - {x: 16.016983, y: 84}
+        - {x: 16.016983, y: 70}
+        - {x: 24.016983, y: 62}
+        - {x: 31.016983, y: 62}
+        - {x: 60.016983, y: 77}
+        - {x: 60.016983, y: 85}
+        - {x: 55.016983, y: 100}
+      - - {x: -19.983017, y: 118}
+        - {x: -19.983017, y: 78}
+        - {x: 3.016983, y: 78}
+        - {x: 3.016983, y: 118}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

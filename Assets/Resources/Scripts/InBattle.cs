@@ -8,7 +8,7 @@ public class InBattle : MonoBehaviour {
 
 	public Image fighter, fighterDois, fighterTres;
 	public GameObject lutador, lutadorDois, lutadorTres, controladorBotoes, balaoFala, botaoAtacar;
-	public GameObject bromo, zinco, oxigenio;
+	public GameObject bromo, zinco, oxigenio, bario;
 	public Text ataqueEscolhido, defesaInimigo;
 	public Text balaoText, valorInimigo;
 	private int atacou, ativaosFigheters;
@@ -51,7 +51,7 @@ public class InBattle : MonoBehaviour {
 		
 		botaoAtacar.SetActive(true);
 		atacou = 2;
-		balaoText.text = " Use o número Atomico!!"; 
+		balaoText.text = " Use o numero Atomico!!"; 
 		ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());
 	}
 
@@ -81,6 +81,11 @@ public class InBattle : MonoBehaviour {
 				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
 				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
+			if(Oponente.ataqueDefesa == 4){
+				Oponente.massaAtomicaFloat = 10.8f;
+				defesaInimigo.text = ((Oponente.massaAtomicaFloat).ToString());
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
+			}
 		}if(atacou == 2){
 			if(Oponente.ataqueDefesa == 1){
 				Oponente.numeroAtomicoInt = 8;
@@ -94,6 +99,11 @@ public class InBattle : MonoBehaviour {
 			}
 			if(Oponente.ataqueDefesa == 3){
 				Oponente.numeroAtomicoInt = 35;
+				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
+				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
+			}
+			if(Oponente.ataqueDefesa == 4){
+				Oponente.numeroAtomicoInt = 5;
 				defesaInimigo.text = ((Oponente.numeroAtomicoInt).ToString());
 				CheckHit.hitEnemy = float.Parse(defesaInimigo.text );
 			}
@@ -143,6 +153,20 @@ public class InBattle : MonoBehaviour {
 			zinco.SetActive (true);
 			zinco.transform.position = new Vector3 (fighterTres.transform.position.x, fighterTres.transform.position.y, 0);
 			ativaosFigheters = ativaosFigheters +1;
+		}
+		if (PlayerPrefs.GetString ("Lutador1") == "Bario") {
+			bario.SetActive (true);
+			bario.transform.position = new Vector3 (fighter.transform.position.x, fighter.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
+		}if (PlayerPrefs.GetString ("Lutador2") == "Bario") {
+			bario.SetActive (true);
+			bario.transform.position = new Vector3 (fighterDois.transform.position.x, fighterDois.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
+		}if (PlayerPrefs.GetString ("Lutador3") == "Bario") {
+			bario.SetActive (true);
+			bario.transform.position = new Vector3 (fighterTres.transform.position.x, fighterTres.transform.position.y, 0);
+			ativaosFigheters = ativaosFigheters +1;
+
 		}
 
 		if(ativaosFigheters != 3){

@@ -1,0 +1,137 @@
+fileFormatVersion: 2
+guid: 09549e28b5990dd498a69b19a95ce2ae
+timeCreated: 1476972385
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Tabela_Periodica_0
+    21300002: Tabela_Periodica_2
+    21300004: Tabela_Periodica_3
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 1024
+  textureSettings:
+    filterMode: 2
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Tabela_Periodica_0
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 1195
+        width: 1245
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -311.11932, y: 42.208374}
+        - {x: -311.11932, y: 0.20837402}
+        - {x: -297.11932, y: -41.791626}
+        - {x: -55.119324, y: -41.791626}
+        - {x: -54.119324, y: -36.791626}
+        - {x: -54.119324, y: 42.208374}
+      - - {x: -49.119324, y: 40.208374}
+        - {x: -51.119324, y: 37.208374}
+        - {x: -51.119324, y: -28.791626}
+        - {x: -50.119324, y: -36.791626}
+        - {x: 36.880676, y: -41.791626}
+        - {x: 295.88068, y: -41.791626}
+        - {x: 304.88068, y: -39.791626}
+        - {x: 304.88068, y: 29.208374}
+        - {x: 292.88068, y: 40.208374}
+    - name: Tabela_Periodica_2
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 1143
+        width: 174
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -36.44995, y: 44.72107}
+        - {x: -43.44995, y: 27.72107}
+        - {x: -43.44995, y: -28.27893}
+        - {x: -23.449951, y: -44.27893}
+        - {x: 36.55005, y: -44.27893}
+        - {x: 44.55005, y: -24.27893}
+        - {x: 44.55005, y: 37.72107}
+        - {x: 40.55005, y: 44.72107}
+    - name: Tabela_Periodica_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 2049
+        height: 1077
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 510, y: -257.5}
+        - {x: 512, y: -252.5}
+        - {x: 512, y: 251.5}
+        - {x: 511, y: 254.5}
+        - {x: 500, y: 265.5}
+        - {x: 499, y: 265.5}
+        - {x: 497, y: 267.5}
+        - {x: 495, y: 267.5}
+        - {x: 492, y: 269.5}
+        - {x: -492, y: 269.5}
+        - {x: -501, y: 265.5}
+        - {x: -509, y: 257.5}
+        - {x: -512, y: 250.5}
+        - {x: -512, y: -251.5}
+        - {x: -509, y: -258.5}
+        - {x: -501, y: -266.5}
+        - {x: -494, y: -269.5}
+        - {x: 495, y: -269.5}
+        - {x: 500, y: -267.5}
+        - {x: 507, y: -260.5}
+        - {x: 507, y: -259.5}
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
