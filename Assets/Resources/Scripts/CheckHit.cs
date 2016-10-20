@@ -7,12 +7,12 @@ public class CheckHit : MonoBehaviour {
 	public float  hitChar, massaAtomicaFloat;
 	public GameObject character, enemy, balaoFala, enemy1, enemy2, enemy3, controladorBotoes, controladorBotoes2, controladorBotoesPai;
 	public GameObject botaoAtacar, oxigenio, bromo, zinco, TurnAnimation, valorEnemy, ValorPlayer;
-	public GameObject recipiente1, recipiente2, recipiente3, tutoAnim;
+	public GameObject recipiente1, recipiente2, recipiente3, tutoAnim, controladorSuaVez;
 	public static float hitEnemy;
 	public static int statusEnemy, empate, empates, comensaldaMorte, comensaldaMorte2;
 	public Image elementoInimigo, imagem2;
 	public Text ataqueEscolhido, defesaInimigo;
-	public int numeroAtomicoInt;
+	public int numeroAtomicoInt, i;
 	private int personagemNafila, atacouMA, atacouNM;
 	public static bool Atacou, personagem1Morto;
 	public Image jogador;	
@@ -21,58 +21,66 @@ public class CheckHit : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		i = 0;
 		personagem1Morto = false;
 		CheckHit.statusEnemy = 0;
 		personagemNafila = 0;
 		empates = 0;
+		InBattle.contadorminhaVez = 1;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-		// isso aqui nao esta certo, isso eh um erro
+		/* isso aqui nao esta certo, isso eh um erro
 		if( InBattle.contadorminhaVez == 3){
 			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
-		}
+		}*/
 
 		if(CheckHit.comensaldaMorte == 3){
-			enemy.SetActive(false);
-			character.SetActive(false);
+
 			enemy3.SetActive(false);
 			controladorBotoesPai.SetActive(false);
 			controladorBotoes.SetActive(false);
 			controladorBotoes2.SetActive(false);
+			controladorSuaVez.SetActive(false);
+			if (i == 0) {
+				Invoke ("AnimWinner", 3.5f);
+			}
 			Debug.Log("Venceu Porra");
+			i = i + 1;
 		}
 		if(CheckHit.comensaldaMorte2 == 3){
 			Debug.Log("Perdeu merda");
 		}
+		//Esses São os Contra Ataques;
 
-
-
-		if (CheckHit.Atacou == true && ValoresElementos.personagemSelecionado == 1) {
-			controladorBotoesPai.SetActive(true);
-			controladorBotoes2.SetActive (true);
-			controladorBotoes.SetActive (true);
-			botaoAtacar.SetActive (false);
-
-		}
-		if(atacouNM == 1 && ValoresElementos.personagemSelecionado == 1){
+		if(CheckHit.Atacou == true && atacouNM == 1 && ValoresElementos.personagemSelecionado == 2){
+			InBattle.contadorminhaVez = InBattle.contadorminhaVez+1;
 			controladorBotoesPai.SetActive(true);
 			controladorBotoes.SetActive (false);
 			controladorBotoes2.SetActive (true);
 			botaoAtacar.SetActive (false);
 			ValoresElementos.personagemSelecionado = 1;
 			atacouNM = 0;
+
 	}
-		if(atacouMA == 1 && ValoresElementos.personagemSelecionado == 1){
+		if(CheckHit.Atacou == true && atacouMA == 1 && ValoresElementos.personagemSelecionado == 2){
+			InBattle.contadorminhaVez = InBattle.contadorminhaVez+1;
 			controladorBotoesPai.SetActive(true);
 			controladorBotoes2.SetActive (false);
 			controladorBotoes.SetActive (true);
 			botaoAtacar.SetActive (false);
 			atacouNM = 0;
 			ValoresElementos.personagemSelecionado = 1;
+		
 		}
+	}
+	void AnimWinner(){
+		character.GetComponent<Animator> ().Play ("Winner");
+		ShowElement.eletrons = ShowElement.eletrons+20;
+		PlayerPrefs.SetInt("QtdEletrons",ShowElement.eletrons);
 	}
 
 	public void converterChar(Text valorChar){
@@ -84,7 +92,7 @@ public class CheckHit : MonoBehaviour {
 
 	public void checarHit(){
 
-		if(empates == 0){
+		if(PlayerPrefs.GetInt ("concluirTutorial") == 0){
 			Invoke("AnimacaoEnemy", 6.5f);
 		}
 
@@ -114,9 +122,7 @@ public class CheckHit : MonoBehaviour {
 			empates = empates+1;
 			Invoke ("executarAnimacaoEmpate", 2);
 			Invoke("Empate", 5);
-
-		
-		
+				
 		}
 		if(hitChar > CheckHit.hitEnemy && CheckHit.statusEnemy == 2){
 			Invoke ("executarAnimacao3", 3);
@@ -134,18 +140,21 @@ public class CheckHit : MonoBehaviour {
 	}
 
 	void executarAnimacao(){
+		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
 		CheckHit.statusEnemy = 1;
 		character.GetComponent<Animator>().Play ("AtaqueChar");
 		balaoFala.SetActive (false);
 		enemy1.SetActive (false);
 	}
 	void executarAnimacao2(){
+		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
 		CheckHit.statusEnemy = 2;
 		character.GetComponent<Animator>().Play ("AtaqueChar");
 		balaoFala.SetActive (false);
 		enemy2.SetActive (false);
 	}
 	void executarAnimacao3(){
+		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
 		character.GetComponent<Animator>().Play ("AtaqueChar");
 		balaoFala.SetActive (false);
 		enemy3.SetActive (false);
@@ -167,24 +176,59 @@ public class CheckHit : MonoBehaviour {
 	}
 
 	void matarOterceiro(){
-		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
+		
 		enemy.SetActive (false);
 	}
 
 	void Empate(){
 		empate = Random.Range(0,2);
 		if(empate == 0 && empates == 1){
-			executarAnimacao();
+			if (CheckHit.statusEnemy == 2) {
+				Debug.Log("entrou tres empate");
+				executarAnimacao3 ();
+			}
+			if (CheckHit.statusEnemy == 1) {
+				Debug.Log("entrou duas empate");
+				executarAnimacao2 ();
+			}
+			if (CheckHit.statusEnemy == 0) {
+				Debug.Log("entrou uma empate");
+				executarAnimacao ();
+			}
+			Debug.Log("entrou no 1 empate");
 			Invoke("mudarImagemEnemy", 1);
 		}
 		if(empate == 0 && empates == 2){
-			executarAnimacao2();
+			if (CheckHit.statusEnemy == 2) {
+				Debug.Log("entrou tres empate");
+				executarAnimacao3 ();
+			}
+			if (CheckHit.statusEnemy == 1) {
+				Debug.Log("entrou duas empate");
+				executarAnimacao2 ();
+			}
+			if (CheckHit.statusEnemy == 0) {
+				Debug.Log("entrou uma empate");
+				executarAnimacao ();
+			}
+			Debug.Log("entrou no 2 empate");
 			Invoke("mudarImagemEnemy", 1);
 		}
 		if(empate == 0 && empates == 3){
-			executarAnimacao3();
-			Invoke("mudarImagemEnemy", 1);
-		}
+			if (CheckHit.statusEnemy == 2) {
+				Debug.Log("entrou tres empate");
+				executarAnimacao3 ();
+			}
+			if (CheckHit.statusEnemy == 1) {
+				Debug.Log("entrou duas empate");
+				executarAnimacao2 ();
+			}
+			if (CheckHit.statusEnemy == 0) {
+				Debug.Log("entrou uma empate");
+				executarAnimacao ();
+			}
+			Debug.Log("entrou no 3 empate");
+			}
 		if(empate == 1 && empates == 1 ){
 			executarAnimacaoContra();
 			Invoke("mudarImagemPlayer", 1);
@@ -204,7 +248,7 @@ public class CheckHit : MonoBehaviour {
 			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
 		}
 		
-		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
+
 		if (CheckHit.statusEnemy == 1) {
 			CheckHit.Atacou = false;
 			elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/" + PlayerPrefs.GetString ("Oponente2"))as Sprite;
@@ -236,7 +280,8 @@ public class CheckHit : MonoBehaviour {
 				}
 			 //ultimoEnemy = true;
 		}
-		if (CheckHit.Atacou == true && InBattle.contadorminhaVez != 2) {
+		if (CheckHit.Atacou == true && InBattle.contadorminhaVez == 2) {
+			InBattle.contadorminhaVez = InBattle.contadorminhaVez+1;
 			controladorBotoesPai.SetActive(true);
 			controladorBotoes2.SetActive (true);
 			controladorBotoes.SetActive (true);

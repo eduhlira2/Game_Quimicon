@@ -42,13 +42,13 @@ public class InBattle : MonoBehaviour {
 	public void ataqueMassaAtomica(){
 		botaoAtacar.SetActive(true);
 		atacou = 1;
-		InBattle.contadorminhaVez=contadorminhaVez+1;
+
 		balaoText.text = " Use a massa atomica!!"; 
 		ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
 	}
 
 	public void ataqueNumeroAtomico(){
-		InBattle.contadorminhaVez=contadorminhaVez+1;
+		
 		botaoAtacar.SetActive(true);
 		atacou = 2;
 		balaoText.text = " Use o número Atomico!!"; 

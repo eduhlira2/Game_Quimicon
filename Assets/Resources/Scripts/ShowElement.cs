@@ -15,7 +15,7 @@ public class ShowElement : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-
+		// PlayerPrefs.SetInt("QtdEletrons",0);
 		eletrons= PlayerPrefs.GetInt("QtdEletrons");
 		nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
 		Bromo = PlayerPrefs.GetInt("Bromo");
