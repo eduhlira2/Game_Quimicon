@@ -6,7 +6,7 @@ public class CheckHit : MonoBehaviour {
 
 	public float  hitChar, massaAtomicaFloat;
 	public GameObject character, enemy, balaoFala, enemy1, enemy2, enemy3, controladorBotoes, controladorBotoes2, controladorBotoesPai;
-	public GameObject botaoAtacar, oxigenio, bromo, zinco, TurnAnimation, valorEnemy, ValorPlayer;
+	public GameObject botaoAtacar, oxigenio, bromo, zinco,bario, TurnAnimation, valorEnemy, ValorPlayer;
 	public GameObject recipiente1, recipiente2, recipiente3, tutoAnim, controladorSuaVez;
 	public static float hitEnemy;
 	public static int statusEnemy, empate, empates, comensaldaMorte, comensaldaMorte2;
@@ -38,7 +38,7 @@ public class CheckHit : MonoBehaviour {
 			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
 		}*/
 
-		if(CheckHit.comensaldaMorte == 3){
+		if(CheckHit.comensaldaMorte == 3){   //Aqui é onde fica verificando se todos os personagens do oponente foram derrotados.
 
 			enemy3.SetActive(false);
 			controladorBotoesPai.SetActive(false);
@@ -51,13 +51,13 @@ public class CheckHit : MonoBehaviour {
 			Debug.Log("Venceu Porra");
 			i = i + 1;
 		}
-		if(CheckHit.comensaldaMorte2 == 3){
+		if(CheckHit.comensaldaMorte2 == 3){ // Aqui é onde fica verificando a morte dos meus personagens
 			Debug.Log("Perdeu merda");
 		}
 		//Esses São os Contra Ataques;
 
-		if(CheckHit.Atacou == true && atacouNM == 1 && ValoresElementos.personagemSelecionado == 2){
-			InBattle.contadorminhaVez = InBattle.contadorminhaVez+1;
+		if(CheckHit.Atacou == true && atacouNM == 1 /*&& ValoresElementos.personagemSelecionado == 2*/){ //*Tenho que verificar essas condições
+			InBattle.contadorminhaVez = InBattle.contadorminhaVez+1; // não uso essa variavel em nenhum luga no script InBattle
 			controladorBotoesPai.SetActive(true);
 			controladorBotoes.SetActive (false);
 			controladorBotoes2.SetActive (true);
@@ -66,7 +66,7 @@ public class CheckHit : MonoBehaviour {
 			atacouNM = 0;
 
 	}
-		if(CheckHit.Atacou == true && atacouMA == 1 && ValoresElementos.personagemSelecionado == 2){
+		if(CheckHit.Atacou == true && atacouMA == 1 /*&& ValoresElementos.personagemSelecionado == 2*/){
 			InBattle.contadorminhaVez = InBattle.contadorminhaVez+1;
 			controladorBotoesPai.SetActive(true);
 			controladorBotoes2.SetActive (false);
@@ -86,11 +86,8 @@ public class CheckHit : MonoBehaviour {
 	public void converterChar(Text valorChar){
 		hitChar = float.Parse(valorChar.text);
 	}
-	/*public void converterEnemy(Text valorInimigo){
-		CheckHit.hitEnemy = float.Parse(valorInimigo.text);
-	}*/
 
-	public void checarHit(){
+	public void checarHit(){   //Essa função esta no botão de atacar
 
 		if(PlayerPrefs.GetInt ("concluirTutorial") == 0){
 			Invoke("AnimacaoEnemy", 6.5f);
@@ -109,14 +106,15 @@ public class CheckHit : MonoBehaviour {
 	}
 
 	void executarAcoes(){
-		Debug.Log ("O valor de hitChar é: " + hitChar);
-		Debug.Log ("O valor de hitEnemy é: " + CheckHit.hitEnemy);
+		//Debug.Log ("O valor de hitChar é: " + hitChar);
+		//Debug.Log ("O valor de hitEnemy é: " + CheckHit.hitEnemy);
 
-		if(hitChar < CheckHit.hitEnemy){
+		if(hitChar < CheckHit.hitEnemy){    //O valor de CheckHit.hitEnemy é setado no primeiro "contraataque" 
 			Debug.Log ("o cara te matou");
-			Invoke ("executarAnimacaoContra", 2);
+			Invoke ("executarAnimacaoContra", 2); //Segue para a função lá embaixo
 			Invoke ("mudarImagemPlayer", 3);
-
+												         
+			//Aqui é a bifurcação do primeiro caso, ou ele vence no inicio, ou perde
 		}
 		if(hitChar == CheckHit.hitEnemy){
 			empates = empates+1;
@@ -149,7 +147,7 @@ public class CheckHit : MonoBehaviour {
 	void executarAnimacao2(){
 		CheckHit.comensaldaMorte = CheckHit.comensaldaMorte+1;
 		CheckHit.statusEnemy = 2;
-		character.GetComponent<Animator>().Play ("AtaqueChar");
+		character.GetComponent<Animator>().Play ("AtaqueChar");          //Esse conjunto de Animações, acontecem de modo individual para cada oponente.
 		balaoFala.SetActive (false);
 		enemy2.SetActive (false);
 	}
@@ -162,8 +160,8 @@ public class CheckHit : MonoBehaviour {
 		Invoke ("matarOterceiro", 2);
 
 	}
-	void executarAnimacaoContra(){
-		personagemNafila = personagemNafila+1;
+	void executarAnimacaoContra(){								//função para executar a animação de contraataque do oponente, quando terminar voltar para "ExecutarAcoes"
+		personagemNafila = personagemNafila+1; //*buscar informações sobre isso aqui
 		character.GetComponent<Animator>().Play ("AtaqueEnemy");
 		balaoFala.SetActive (false);
 		//balaoFala.SetActive (false);
@@ -298,8 +296,8 @@ public class CheckHit : MonoBehaviour {
 	}
 	void mudarImagemPlayer(){
 		CheckHit.comensaldaMorte2 = CheckHit.comensaldaMorte2+1;
-		personagem1Morto = true;
-		if(CheckHit.Atacou == true){
+		personagem1Morto = true;//pq so o personagem 1?
+		if(CheckHit.Atacou == true){ //Acho que aqui esta o problema da animacao de turnos
 			TurnAnimation.GetComponent<Animator>().Play ("Sua_Vez");
 		}
 
@@ -364,11 +362,12 @@ public class CheckHit : MonoBehaviour {
 				personagemNafila = personagemNafila+1;
 			}
 			if (PlayerPrefs.GetString ("Lutador2") == "Bario") {
-				bromo.SetActive (false);
+				bario.SetActive (false);
 				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente1.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
+				personagemNafila = personagemNafila+1;
 			}
 			Debug.Log("entrou no personagem2");
 		}
@@ -399,18 +398,20 @@ public class CheckHit : MonoBehaviour {
 				personagemNafila = personagemNafila+1;
 			}
 			if (PlayerPrefs.GetString ("Lutador3") == "Bario") {
-				bromo.SetActive (false);
+				bario.SetActive (false);
 				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente1.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
+				personagemNafila = personagemNafila+1;
 			}
 			Debug.Log("entrou no personagem1");
 		}
 
 
-		if (CheckHit.Atacou == false) {
+		if (InBattle.contadorminhaVez == 1) {
 			Invoke ("ataqueInimigo", 3);
+			// ptovavelmente aqui vai entrar na animação do turno para o oponente, no caso de o personagem morrer no inicio.
 		}
 		if (InBattle.contadorminhaVez == 2) {
 			Invoke ("ataqueInimigo", 3);
@@ -421,7 +422,7 @@ public class CheckHit : MonoBehaviour {
 		int rand;
 		rand = Random.Range(0,2);
 
-		if(rand == 0 && CheckHit.Atacou == false){
+		if(rand == 0 && CheckHit.Atacou == false){//tenho que verificar essa condição do "ChackHit.Atacou"
 			if(Oponente.ataqueDefesa == 1){
 				massaAtomicaFloat = 15.9f;
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());
@@ -439,6 +440,7 @@ public class CheckHit : MonoBehaviour {
 				defesaInimigo.text = ((massaAtomicaFloat).ToString());
 			}
 			atacouMA = 1;
+
 			if(personagem1Morto == false){
 				controladorBotoesPai.SetActive(true);
 				controladorBotoes.SetActive (true);
@@ -464,6 +466,7 @@ public class CheckHit : MonoBehaviour {
 				defesaInimigo.text = ((numeroAtomicoInt).ToString());
 			}
 			atacouNM = 1;
+
 			if(personagem1Morto == false){
 				controladorBotoesPai.SetActive(true);
 				controladorBotoes.SetActive (false);

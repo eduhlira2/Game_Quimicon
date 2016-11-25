@@ -8,13 +8,13 @@ public class PauseTime : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		PlayerPrefs.SetInt ("concluirTutorial", 0);
+		PlayerPrefs.SetInt ("concluirTutorial", 1);
 
 		Debug.Log ("O valor do Tuto eh: " + PlayerPrefs.GetInt ("concluirTutorial"));
-		passouTuto = 0;
+		//passouTuto = 0;
 		if (PlayerPrefs.GetInt ("concluirTutorial") == 0) {
 			tutoAnim.SetActive (true);
-			ParaTempo ();
+			ParaTempo();
 		}
 	}
 	

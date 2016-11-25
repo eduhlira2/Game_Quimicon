@@ -44,7 +44,7 @@ public class InBattle : MonoBehaviour {
 		atacou = 1;
 
 		balaoText.text = " Use a massa atomica!!"; 
-		ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
+		ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString()); //faz aparecer o numero no campo dos valores do jogador
 	}
 
 	public void ataqueNumeroAtomico(){
@@ -52,10 +52,10 @@ public class InBattle : MonoBehaviour {
 		botaoAtacar.SetActive(true);
 		atacou = 2;
 		balaoText.text = " Use o numero Atomico!!"; 
-		ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());
+		ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());//faz aparecer o numero no campo dos valores do jogador
 	}
 
-	public void enviarAtaque(){
+	public void enviarAtaque(){    // esta função faz desaparecer os botoes e aparecer o balao de fala.
 
 		controladorBotoes.SetActive (false);
 		balaoFala.SetActive (true);
@@ -64,7 +64,7 @@ public class InBattle : MonoBehaviour {
 	}
 
 
-	void AtaqueOponente(){
+	void AtaqueOponente(){ //aqui acontece o primeiro contra ataque, em teoria, seria onde eu passo os valores do oponente, dependendo do ataque que eu escolhi.
 		if (atacou == 1){
 			if(Oponente.ataqueDefesa == 1){
 				Oponente.massaAtomicaFloat = 15.9f;
@@ -109,6 +109,8 @@ public class InBattle : MonoBehaviour {
 			}
 		}
 	}
+
+	// depois dessa função, o sript "CheckHit" entra em ação.
 
 	void AtivarFighters(){			
 
@@ -166,9 +168,7 @@ public class InBattle : MonoBehaviour {
 			bario.SetActive (true);
 			bario.transform.position = new Vector3 (fighterTres.transform.position.x, fighterTres.transform.position.y, 0);
 			ativaosFigheters = ativaosFigheters +1;
-
 		}
-
 		if(ativaosFigheters != 3){
 			AtivarFighters();
 		}

@@ -136,7 +136,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 10.8f;
 			Oponente.numeroAtomicoInt = 5 ;
 			PlayerPrefs.SetString("Oponente3", "Boro");
-			Oponente.ataqueDefesa = 4;
+			Oponente.oponenteTerceiro = 4;
 			mostrarInimigos();
 		}
 
