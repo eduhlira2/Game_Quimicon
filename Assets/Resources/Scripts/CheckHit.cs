@@ -364,7 +364,7 @@ public class CheckHit : MonoBehaviour {
 			if (PlayerPrefs.GetString ("Lutador2") == "Bario") {
 				bario.SetActive (false);
 				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
-				recipiente1.SetActive(false);
+				recipiente2.SetActive(false);
 				ataqueEscolhido.text = "0";
 				defesaInimigo.text = "0";
 				personagemNafila = personagemNafila+1;
@@ -399,6 +399,7 @@ public class CheckHit : MonoBehaviour {
 			}
 			if (PlayerPrefs.GetString ("Lutador3") == "Bario") {
 				bario.SetActive (false);
+				recipiente3.SetActive(false);
 				jogador.sprite =  Resources.Load<Sprite> ("Sprites/Hud/"+"Selecione um elemento")as Sprite;
 				recipiente1.SetActive(false);
 				ataqueEscolhido.text = "0";

@@ -39,7 +39,6 @@ public class CharacterSelect : MonoBehaviour {
 			lutador1 = Resources.Load<GameObject> ("Prefabs/"+nameImage)as GameObject;
 		}
 
-
 	}
 
 	public void ZerarPlayers(){
