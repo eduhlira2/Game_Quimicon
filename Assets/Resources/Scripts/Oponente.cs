@@ -26,7 +26,7 @@ public class Oponente : MonoBehaviour {
 
 	void mostrarInimigos(){
 		selected = Random.Range(0,4);
-
+		 
 
 		if(selected == 0 && aux == 1){
 			fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/"+"oxigenio_face")as Sprite;

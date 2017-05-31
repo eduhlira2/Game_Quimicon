@@ -1,7 +1,7 @@
+﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2008
-
-Project("{C3C7733A-C882-B16C-023F-6EB5497196DE}") = "quimicon", "Assembly-CSharp.csproj", "{CB1AC09F-8C95-BD33-0F84-BDC98BFE5C96}"
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "quimicon", "Assembly-CSharp.csproj", "{CB1AC09F-8C95-BD33-0F84-BDC98BFE5C96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

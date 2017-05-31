@@ -4,17 +4,17 @@ using System.Collections;
 
 public class ShowElement : MonoBehaviour {
 
-	public GameObject elemento, elemento2;
+	public GameObject elemento, elemento2, ParticulasNascimento, botaoCriar,avisoErro;
 	public string K, L, M, N, O, P, Q,aux_string;
 	public Text nEletrons;
-	public static int eletrons;
+	public static int eletrons, jacriou;
 	public static int Bromo, qtdbromo;
 
 	public GameObject errorMensage;
 
 	// Use this for initialization
 	void Start () {
-		PlayerPrefs.SetInt("QtdEletrons", 56);
+		//PlayerPrefs.SetInt("QtdEletrons", 56);
 		// PlayerPrefs.SetInt("QtdEletrons",0);
 		eletrons= PlayerPrefs.GetInt("QtdEletrons");
 		nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
@@ -57,7 +57,20 @@ public class ShowElement : MonoBehaviour {
 		}
 	}
 	public void Checkword(){
-		
+		jacriou = 0;
+		Invoke("MostrarElemento", 2);
+		ParticulasNascimento.SetActive(true);
+  }
+	void aumentarEletrons(){
+	
+		ShowElement.eletrons = ShowElement.eletrons+1;
+		PlayerPrefs.SetInt("QtdEletrons",ShowElement.eletrons); //onde armazeno a quantidade de eletrons do ususario;
+		nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
+
+	}
+	void MostrarElemento(){
+		Invoke("pararParticulas", 3);
+
 		//Cria o Bromo
 		if (K == "2" && L == "8" && M == "18" && N == "8" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 35){
 			elemento2.SetActive(true);
@@ -67,6 +80,8 @@ public class ShowElement : MonoBehaviour {
 			ShowElement.Bromo = 1;
 			ShowElement.qtdbromo = 1;
 			PlayerPrefs.SetInt("Bromo", ShowElement.Bromo);
+			jacriou=1;
+			botaoCriar.SetActive(false);
 		}
 		//Cria o Bario
 		if (K == "2" && L == "8" && M == "18" && N == "18" && O == "8" && P == "2" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 56){
@@ -77,16 +92,20 @@ public class ShowElement : MonoBehaviour {
 			ShowElement.Bromo = 1;
 			ShowElement.qtdbromo = 1;
 			PlayerPrefs.SetInt("Bromo", ShowElement.Bromo);
-		}else{
+			jacriou=1;
+			botaoCriar.SetActive(false);
+		}
+		if(jacriou == 0){
 			elemento.SetActive(false);
 			errorMensage.SetActive(true);
 		}
-  }
-	void aumentarEletrons(){
+	}
+	void pararParticulas(){
+		Debug.Log("parou as particulas");
 	
-		ShowElement.eletrons = ShowElement.eletrons+1;
-		PlayerPrefs.SetInt("QtdEletrons",ShowElement.eletrons); //onde armazeno a quantidade de eletrons do ususario;
-		nEletrons.text = (PlayerPrefs.GetInt("QtdEletrons").ToString());//recebe a quantidade de eletrons armazenados e mostraa;
-
+		ParticulasNascimento.SetActive(false);
+	}
+	public void fecharAviso(){
+		avisoErro.SetActive(false);
 	}
 }
