@@ -9,6 +9,7 @@ public class Oponente : MonoBehaviour {
 	public static float massaAtomicaFloat;
 	public static int numeroAtomicoInt;
 	public static int ataqueDefesa, oponenteSegundo, oponenteTerceiro;
+	public Text nomeInimigo;
 
 	// Use this for initialization
 	void Start () {
@@ -36,6 +37,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 8;
 			aux = aux+1;
 			Oponente.ataqueDefesa = 1;
+			nomeInimigo.text = "Oxigenio";
 			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 1){
@@ -46,6 +48,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente1", "Zinco");
 			Oponente.ataqueDefesa = 2;
+			nomeInimigo.text = "Zinco";
 			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 1){
@@ -56,6 +59,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente1", "Bromo");
 			Oponente.ataqueDefesa = 3;
+			nomeInimigo.text = "Bromo";
 			mostrarInimigos();
 		}
 		if(selected == 3  && aux == 1){
@@ -66,6 +70,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 5 ;
 			PlayerPrefs.SetString("Oponente1", "Boro");
 			Oponente.ataqueDefesa = 4;
+			nomeInimigo.text = "Boro";
 			mostrarInimigos();
 		}
 
@@ -77,6 +82,7 @@ public class Oponente : MonoBehaviour {
 			aux = aux+1;
 			PlayerPrefs.SetString("Oponente2", "Oxigenio");
 			Oponente.oponenteSegundo = 1;
+			//nomeInimigo.text = "Oxigenio";
 			mostrarInimigos();
 		}
 		if(selected == 1 && aux == 2f){
@@ -86,6 +92,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente2", "Zinco");
 			Oponente.oponenteSegundo = 2;
+			//nomeInimigo.text = "Zinco";
 			mostrarInimigos();
 		}
 		if(selected == 2  && aux == 2f){
@@ -95,6 +102,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente2", "Bromo");
 			Oponente.oponenteSegundo = 3;
+			//nomeInimigo.text = "Bromo";
 			mostrarInimigos();
 		}
 		if(selected == 3  && aux == 2f){
@@ -105,6 +113,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 5 ;
 			PlayerPrefs.SetString("Oponente2", "Boro");
 			Oponente.ataqueDefesa = 4;
+			//nomeInimigo.text = "Boro";
 			mostrarInimigos();
 		}
 
@@ -114,6 +123,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 15.9f;
 			Oponente.numeroAtomicoInt = 8;
 			PlayerPrefs.SetString("Oponente3", "Oxigenio");
+			//nomeInimigo.text = "Oxigenio";
 			Oponente.oponenteTerceiro = 1;
 		}
 		if(selected == 1 && aux == 3f){
@@ -121,6 +131,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 65.4f;
 			Oponente.numeroAtomicoInt = 30;
 			PlayerPrefs.SetString("Oponente3", "Zinco");
+			//nomeInimigo.text = "Zinco";
 			Oponente.oponenteTerceiro = 2;
 		}
 		if(selected == 2  && aux == 3f){
@@ -128,6 +139,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.massaAtomicaFloat = 79.9f;
 			Oponente.numeroAtomicoInt = 35;
 			PlayerPrefs.SetString("Oponente3", "Bromo");
+			//nomeInimigo.text = "Bromo";
 			Oponente.oponenteTerceiro = 3;
 		}
 		if(selected == 3  && aux == 3f){
@@ -137,6 +149,7 @@ public class Oponente : MonoBehaviour {
 			Oponente.numeroAtomicoInt = 5 ;
 			PlayerPrefs.SetString("Oponente3", "Boro");
 			Oponente.oponenteTerceiro = 4;
+			//nomeInimigo.text = "Boro";
 			mostrarInimigos();
 		}
 

@@ -9,7 +9,8 @@ public class LutaControler : MonoBehaviour {
 	public GameObject enemy1, enemy2, enemy3, imagemInimigo, imagemJogador,player3,player2,player1, teste;
 	private int myTurn, ataqueEnemy, natomicoEnemy, ataqueSelecionado, contadorEnemy, contadorPlayer, mortesEnemy, mortesPlayer;
 	private float massatomicaEnemy;
-	public Text ataqueEscolhido,defesaInimigo;
+	public static int enemyAtaqueLimite;
+	public Text ataqueEscolhido,defesaInimigo, nomeEnemy;
 	public Image imagemEnemy, imagemPlayer;
 
 
@@ -20,6 +21,7 @@ public class LutaControler : MonoBehaviour {
 		controladorVez();
 		contadorEnemy = 1;
 		contadorPlayer = 1;
+		enemyAtaqueLimite = 2;
 	}
 	
 	// Update is called once per frame
@@ -30,13 +32,14 @@ public class LutaControler : MonoBehaviour {
 	void controladorVez(){
 		
 		if(myTurn == 1){
+			enemyAtaqueLimite = 2;
 			suaVezAnimation.GetComponent<Animator> ().Play ("Sua_Vez");
-			controladorBotoes.SetActive(true);
 			myTurn = 2;
+
 		}else{
 			suaVezAnimation.GetComponent<Animator> ().Play ("vez)Oponente");
 			myTurn = 1;
-			Invoke("vezOponente", 2);
+			Invoke("vezOponente", 3);
 		}
 	} 
 
@@ -113,7 +116,9 @@ public class LutaControler : MonoBehaviour {
 			}
 		}
 	}
-
+	void animVictory(){
+		atackAnimation.GetComponent<Animator> ().Play ("Winner");
+	}
 	void animGanho(){
 		atackAnimation.GetComponent<Animator> ().Play ("AtaqueChar");
 		mortesEnemy++;
@@ -140,33 +145,39 @@ public class LutaControler : MonoBehaviour {
 		}if(contadorPlayer== 3){
 			GameObject.Find(teste.GetComponent<Image>().sprite.name).SetActive(false);
 		}
+
 		ataqueEscolhido.text = "0";
 		defesaInimigo.text = "0";
-		contadorPlayer++;
-		Invoke("mudarChars", 2);
+		//contadorPlayer++;
+		Invoke("mudarPlayer", 2);
+
 	}
 
 	void mudarChars(){
+		
 		if(contadorEnemy == 2){
+			//atackAnimation.GetComponent<Animator> ().Play ("Morteenemy");
 			imagemEnemy.sprite = Resources.Load<Sprite> ("Sprites/"+ PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()))as Sprite;
+			nomeEnemy.text = PlayerPrefs.GetString ("Oponente" + contadorEnemy.ToString ());
 		}
 		if(contadorEnemy == 3){
+			//atackAnimation.GetComponent<Animator> ().Play ("Morteenemy");
 			imagemEnemy.sprite = Resources.Load<Sprite> ("Sprites/"+ PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()))as Sprite;
+			nomeEnemy.text = PlayerPrefs.GetString ("Oponente" + contadorEnemy.ToString ());
 		}
 		if(contadorEnemy == 4){
 			imagemInimigo.SetActive(false);
+			Invoke ("animVictory", 1);
 		}
-		// nessa parte muda a imagem do jogador
-		if(contadorPlayer == 2){
-			imagemPlayer.sprite = Resources.Load<Sprite> ("Sprites/"+ PlayerPrefs.GetString("Lutador"+contadorPlayer.ToString()))as Sprite;
+		if (contadorEnemy != 4) {
+			controladorVez ();
 		}
-		if(contadorPlayer == 3){
-			imagemPlayer.sprite = Resources.Load<Sprite> ("Sprites/"+ PlayerPrefs.GetString("Lutador"+contadorPlayer.ToString()))as Sprite;
-		}
-		if(contadorPlayer == 4){
-			imagemJogador.SetActive(false);
-		}
-		controladorVez();
+	}
+
+	void mudarPlayer(){ //Essa função muda o sprite do personagem para "selecione um elemento", após uma derrota!
+		
+		imagemPlayer.sprite = Resources.Load<Sprite>("Sprites/"+"selecione_elemento")as Sprite;
+		controladorVez ();
 	}
 
 	void vezOponente(){
@@ -174,24 +185,32 @@ public class LutaControler : MonoBehaviour {
 		ataqueEnemy = Random.Range(0,2);
 
 		if(ataqueEnemy == 0){
+			enemyAtaqueLimite = 0; //essa variavel passa para o script ValoresElementos qual ataque o oponente escolheu
+			atackAnimation.GetComponent<Animator> ().Play ("valorEnemy");
 			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Oxigenio"){
+				
 				natomicoEnemy = 8;
 				defesaInimigo.text = ((natomicoEnemy).ToString());
 			}
 			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Bromo"){
+				
 				natomicoEnemy = 35;
 				defesaInimigo.text = ((natomicoEnemy).ToString());
 			}
 			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Zinco"){
+				
 				natomicoEnemy = 30;
 				defesaInimigo.text = ((natomicoEnemy).ToString());
 			}
 			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Boro"){
+				
 				natomicoEnemy = 5;
 				defesaInimigo.text = ((natomicoEnemy).ToString());
 			}
 		}
 		if(ataqueEnemy == 1){
+			enemyAtaqueLimite = 1; 
+			atackAnimation.GetComponent<Animator> ().Play ("valorEnemy");
 			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Oxigenio"){
 				massatomicaEnemy = 15.9f;
 				defesaInimigo.text = ((massatomicaEnemy).ToString());
