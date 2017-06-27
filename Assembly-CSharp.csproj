@@ -52,6 +52,7 @@
      <Compile Include="Assets\Resources\Scripts\Fundo.cs" />
      <Compile Include="Assets\Resources\Scripts\LutaControler.cs" />
      <Compile Include="Assets\Resources\Scripts\Oponente.cs" />
+     <Compile Include="Assets\Resources\Scripts\PassarIntro.cs" />
      <Compile Include="Assets\Resources\Scripts\ShowElement.cs" />
      <Compile Include="Assets\Resources\Scripts\ShowInfo.cs" />
      <Compile Include="Assets\Resources\Scripts\SkipScene.cs" />

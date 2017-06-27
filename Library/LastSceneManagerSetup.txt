@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Resources/Scenes/Game.unity
+- path: "Assets/Resources/Scenes/Tela_Introdu\xE7\xE3o.unity"
   isLoaded: 1
   isActive: 1
