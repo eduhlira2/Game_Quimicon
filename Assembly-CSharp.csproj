@@ -49,6 +49,7 @@
      <Compile Include="Assets\Resources\Scripts\AtivarElementos.cs" />
      <Compile Include="Assets\Resources\Scripts\Ativar_Tabela.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterSelect.cs" />
+     <Compile Include="Assets\Resources\Scripts\CheckElements.cs" />
      <Compile Include="Assets\Resources\Scripts\Fundo.cs" />
      <Compile Include="Assets\Resources\Scripts\LutaControler.cs" />
      <Compile Include="Assets\Resources\Scripts\Oponente.cs" />
@@ -58,6 +59,7 @@
      <Compile Include="Assets\Resources\Scripts\SkipScene.cs" />
      <Compile Include="Assets\Resources\Scripts\TabelaPeriodica.cs" />
      <Compile Include="Assets\Resources\Scripts\ValoresElementos.cs" />
+     <Compile Include="Assets\Resources\Scripts\ZerarJogo.cs" />
      <Compile Include="Assets\Scripts\MovimentoMuro.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
