@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Resources/Scenes/Tabela_Periodica.unity
+- path: Assets/Resources/Scenes/Batalha.unity
   isLoaded: 1
   isActive: 1
