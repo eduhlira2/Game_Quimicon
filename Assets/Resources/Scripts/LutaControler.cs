@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class LutaControler : MonoBehaviour {
 
-	public GameObject AtacarButton, suaVezAnimation, botaoAtacar, controladorBotoes, atackAnimation;
+	public GameObject AtacarButton, suaVezAnimation, botaoAtacar, controladorBotoes, atackAnimation, maozinhas;
 	public GameObject enemy1, enemy2, enemy3, imagemInimigo, imagemJogador,player3,player2,player1, teste;
+	public GameObject particulaganho, particulaperda;
 	private int myTurn, ataqueEnemy, natomicoEnemy, ataqueSelecionado, contadorEnemy, contadorPlayer, mortesEnemy, mortesPlayer;
 	private float massatomicaEnemy;
 	public static int enemyAtaqueLimite;
@@ -35,6 +36,7 @@ public class LutaControler : MonoBehaviour {
 			enemyAtaqueLimite = 2;
 			suaVezAnimation.GetComponent<Animator> ().Play ("Sua_Vez");
 			myTurn = 2;
+			Invoke ("maozinhaSelect", 3);
 
 		}else{
 			suaVezAnimation.GetComponent<Animator> ().Play ("vez)Oponente");
@@ -43,6 +45,9 @@ public class LutaControler : MonoBehaviour {
 		}
 	} 
 
+	void maozinhaSelect(){
+		maozinhas.SetActive (true);
+	}
 	public void selecionarValor(string ataque){
 		if(ataque == "massaatomica"){
 			ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
@@ -93,24 +98,28 @@ public class LutaControler : MonoBehaviour {
 			}
 		}
 		controladorBotoes.SetActive(false);
-		checkHit();
+		Invoke("checkHit", 1);
 	}
 
 	void checkHit(){
 
 		if( ataqueSelecionado == 2){
 			if(float.Parse(ataqueEscolhido.text)> natomicoEnemy){
+				particulaganho.SetActive (true);
 				Invoke("animGanho", 1);
 				//"O oponente Perdeu"
 			}else{
+				particulaperda.SetActive (true);
 				Invoke("animPerda", 1);
 				//"O oponente Venceu"
 			}
 		}else{
 			if(float.Parse(ataqueEscolhido.text)> massatomicaEnemy){
+				particulaganho.SetActive (true);
 				Invoke("animGanho", 1);
 				//"O oponente Perdeu"
 			}else{
+				particulaperda.SetActive (true);
 				Invoke("animPerda", 1);
 				//"O oponente Venceu"
 			}
@@ -120,6 +129,8 @@ public class LutaControler : MonoBehaviour {
 		atackAnimation.GetComponent<Animator> ().Play ("Winner");
 	}
 	void animGanho(){
+		particulaperda.SetActive (false);
+		particulaganho.SetActive (false);
 		atackAnimation.GetComponent<Animator> ().Play ("AtaqueChar");
 		mortesEnemy++;
 		if(contadorEnemy == 1){
@@ -136,6 +147,8 @@ public class LutaControler : MonoBehaviour {
 
 	}
 	void animPerda(){
+		particulaperda.SetActive (false);
+		particulaganho.SetActive (false);
 		atackAnimation.GetComponent<Animator> ().Play ("AtaqueEnemy");
 		mortesPlayer++;
 		if(contadorPlayer == 1){
@@ -228,6 +241,7 @@ public class LutaControler : MonoBehaviour {
 				defesaInimigo.text = ((massatomicaEnemy).ToString());
 			}
 		}
+		maozinhas.SetActive (true);
 
 	}
 }

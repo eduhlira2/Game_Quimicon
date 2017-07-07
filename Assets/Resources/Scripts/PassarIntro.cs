@@ -20,4 +20,7 @@ public class PassarIntro : MonoBehaviour {
 			ControleAnim.GetComponent<Animator> ().Play ("Introduçao_"+numeroIntro);
 			
 	}
+	public void encerrarTuto(){
+		ControleAnim.GetComponent<Animator> ().Play ("FinalizarTuto");
+	}
 }

@@ -8,7 +8,7 @@ public class ValoresElementos : MonoBehaviour {
 	public static float massaAtomicaFloat;
 	public static int numeroAtomicoInt, personagemSelecionado;
 	public string nomeElemento;
-	public GameObject controladorBotoes, botaoAtacar, massaBotao, numeroBotao, controleAnimacao;
+	public GameObject controladorBotoes, botaoAtacar, massaBotao, numeroBotao, controleAnimacao, maozinhas;
 	public Image jogador;
 
 	// Use this for initialization
@@ -22,7 +22,7 @@ public class ValoresElementos : MonoBehaviour {
 	}
 
 	public void MudarValores(string ToSave){
-		
+		maozinhas.SetActive (false);
 		controleAnimacao.GetComponent<Animator>().Play("EscolhaElemento");
 		nomeElemento = ToSave;
 		ataqueEscolhido.text = "0";
