@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class CheckElements : MonoBehaviour {
-	public GameObject helio, litio, neon, selenio, xenonio, criptonio, cesio, carbono, boro;
+	public GameObject helio, litio, neon, selenio, xenonio, criptonio, cesio, carbono, boro, bromo, bario;
 	// Use this for initialization
 	void Start () {
 		if(PlayerPrefs.GetInt("Helio") == 1){
@@ -35,15 +35,25 @@ public class CheckElements : MonoBehaviour {
 			cesio.GetComponent<Image> ().color = Color.white;
 			cesio.GetComponent<Button> ().enabled = true;
 		}
-		if(PlayerPrefs.GetInt("Carbono") == 1){
+		/*if(PlayerPrefs.GetInt("Carbono") == 1){
 			carbono.GetComponent<Image> ().color = Color.white;
 			carbono.GetComponent<Button> ().enabled = true;
-		}
-		if(PlayerPrefs.GetInt("Boro") == 1){
+		}*/
+		/*if(PlayerPrefs.GetInt("Boro") == 1){
 			boro.GetComponent<Image> ().color = Color.white;
 			boro.GetComponent<Button> ().enabled = true;
-		}
-	}
+		}*/
+        if (PlayerPrefs.GetInt("Bromo") == 1)
+        {
+            bromo.GetComponent<Image>().color = Color.white;
+            bromo.GetComponent<Button>().enabled = true;
+        }
+        if (PlayerPrefs.GetInt("Bario") == 1)
+        {
+            bario.GetComponent<Image>().color = Color.white;
+            bario.GetComponent<Button>().enabled = true;
+        }
+    }
 
 	// Update is called once per frame
 	void Update () {

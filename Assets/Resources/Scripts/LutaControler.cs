@@ -5,135 +5,141 @@ using UnityEngine.UI;
 
 public class LutaControler : MonoBehaviour {
 
-	public GameObject AtacarButton, suaVezAnimation, botaoAtacar, controladorBotoes, atackAnimation, maozinhas;
-	public GameObject enemy1, enemy2, enemy3, imagemInimigo, imagemJogador,player3,player2,player1, teste;
-	public GameObject particulaganho, particulaperda;
-	private int myTurn, ataqueEnemy, natomicoEnemy, ataqueSelecionado, contadorEnemy, contadorPlayer, mortesEnemy, mortesPlayer;
-	private float massatomicaEnemy;
-	public static int enemyAtaqueLimite;
-	public Text ataqueEscolhido,defesaInimigo, nomeEnemy;
-	public Image imagemEnemy, imagemPlayer;
+    public GameObject AtacarButton, suaVezAnimation, botaoAtacar, controladorBotoes, atackAnimation, maozinhas;
+    public GameObject enemy1, enemy2, enemy3, imagemInimigo, imagemJogador, player3, player2, player1, teste;
+    public GameObject particulaganho, particulaperda, elementoPlayer;
+    private int myTurn, ataqueEnemy, natomicoEnemy, ataqueSelecionado, contadorEnemy, contadorPlayer, mortesEnemy, mortesPlayer;
+    private float massatomicaEnemy;
+    public static int enemyAtaqueLimite;
+    public Text ataqueEscolhido, defesaInimigo, nomeEnemy;
+    public Image imagemEnemy, imagemPlayer;
 
-	public static int contadorTrilha;
+    public static int contadorTrilha;
 
 
-	// Use this for initialization
-	void Start () {
-		AtacarButton.SetActive(false);
-		myTurn = 1;
-		controladorVez();
-		contadorEnemy = 1;
-		contadorPlayer = 1;
-		enemyAtaqueLimite = 2;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-			
-	}
+    // Use this for initialization
+    void Start() {
+        AtacarButton.SetActive(false);
+        myTurn = 1;
+        controladorVez();
+        contadorEnemy = 1;
+        contadorPlayer = 1;
+        enemyAtaqueLimite = 2;
+    }
 
-	void controladorVez(){
-		
-		if(myTurn == 1){
-			enemyAtaqueLimite = 2;
-			suaVezAnimation.GetComponent<Animator> ().Play ("Sua_Vez");
-			myTurn = 2;
-			Invoke ("maozinhaSelect", 3);
+    // Update is called once per frame
+    void Update() {
 
-		}else{
-			suaVezAnimation.GetComponent<Animator> ().Play ("vez)Oponente");
-			myTurn = 1;
-			Invoke("vezOponente", 3);
-		}
-	} 
+    }
 
-	void maozinhaSelect(){
-		maozinhas.SetActive (true);
-	}
-	public void selecionarValor(string ataque){
-		if(ataque == "massaatomica"){
-			ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
-			botaoAtacar.SetActive(true);
-			ataqueSelecionado = 1;
-		}else{
-			ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());
-			botaoAtacar.SetActive(true);
-			ataqueSelecionado = 2;
-		}
-	}
+    void controladorVez() {
 
-	public void Atacar(){
+        if (myTurn == 1) {
+            enemyAtaqueLimite = 2;
+            suaVezAnimation.GetComponent<Animator>().Play("Sua_Vez");
+            myTurn = 2;
+            Invoke("maozinhaSelect", 2);
 
-		if(ataqueSelecionado == 2){
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Oxigenio"){
-				natomicoEnemy = 8;
-				defesaInimigo.text = ((natomicoEnemy).ToString());
-			}
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Bromo"){
-				natomicoEnemy = 35;
-				defesaInimigo.text = ((natomicoEnemy).ToString());
-			}
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Zinco"){
-				natomicoEnemy = 30;
-				defesaInimigo.text = ((natomicoEnemy).ToString());
-			}
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Boro"){
-				natomicoEnemy = 5;
-				defesaInimigo.text = ((natomicoEnemy).ToString());
-			}
-		}else{
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Oxigenio"){
-				massatomicaEnemy = 15.9f;
-				defesaInimigo.text = ((massatomicaEnemy).ToString());
-			}
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Bromo"){
-				massatomicaEnemy = 79.9f;
-				defesaInimigo.text = ((massatomicaEnemy).ToString());
-			}
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Zinco"){
-				massatomicaEnemy = 65.4f;
-				defesaInimigo.text = ((massatomicaEnemy).ToString());
-			}
-			if(PlayerPrefs.GetString("Oponente"+contadorEnemy.ToString()) == "Boro"){
-				massatomicaEnemy = 10.8f;
-				defesaInimigo.text = ((massatomicaEnemy).ToString());
-			}
-		}
-		controladorBotoes.SetActive(false);
-		Invoke("checkHit", 1);
-	}
+        } else {
+            suaVezAnimation.GetComponent<Animator>().Play("vez)Oponente");
+            myTurn = 1;
+            Invoke("vezOponente", 3);
+        }
+    }
 
-	void checkHit(){
+    void maozinhaSelect() {
+        maozinhas.SetActive(true);
+    }
+    public void selecionarValor(string ataque) {
+        if (ataque == "massaatomica") {
+            ataqueEscolhido.text = ((ValoresElementos.massaAtomicaFloat).ToString());
+            botaoAtacar.SetActive(true);
+            ataqueSelecionado = 1;
+        } else {
+            ataqueEscolhido.text = ((ValoresElementos.numeroAtomicoInt).ToString());
+            botaoAtacar.SetActive(true);
+            ataqueSelecionado = 2;
+        }
+    }
 
-		if( ataqueSelecionado == 2){
-			if(float.Parse(ataqueEscolhido.text)> natomicoEnemy){
-				particulaganho.SetActive (true);
-				Invoke("animGanho", 1);
-				//"O oponente Perdeu"
-			}else{
-				particulaperda.SetActive (true);
-				Invoke("animPerda", 1);
-				//"O oponente Venceu"
-			}
-		}else{
-			if(float.Parse(ataqueEscolhido.text)> massatomicaEnemy){
-				particulaganho.SetActive (true);
-				Invoke("animGanho", 1);
-				//"O oponente Perdeu"
-			}else{
-				particulaperda.SetActive (true);
-				Invoke("animPerda", 1);
-				//"O oponente Venceu"
-			}
-		}
-	}
-	void animVictory(){
-		if ( PlayerPrefs.GetInt("auxHistorico") == PlayerPrefs.GetInt ("contadorTrilha") ) { 
-			contadorTrilha++;
-			PlayerPrefs.SetInt ("contadorTrilha", PlayerPrefs.GetInt ("contadorTrilha") + contadorTrilha);
-		}
-		atackAnimation.GetComponent<Animator> ().Play ("Winner");
-	}
+    public void Atacar() {
+
+        if (ataqueSelecionado == 2) {
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Oxigenio") {
+                natomicoEnemy = 8;
+                defesaInimigo.text = ((natomicoEnemy).ToString());
+            }
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Bromo") {
+                natomicoEnemy = 35;
+                defesaInimigo.text = ((natomicoEnemy).ToString());
+            }
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Zinco") {
+                natomicoEnemy = 30;
+                defesaInimigo.text = ((natomicoEnemy).ToString());
+            }
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Boro") {
+                natomicoEnemy = 5;
+                defesaInimigo.text = ((natomicoEnemy).ToString());
+            }
+        } else {
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Oxigenio") {
+                massatomicaEnemy = 15.9f;
+                defesaInimigo.text = ((massatomicaEnemy).ToString());
+            }
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Bromo") {
+                massatomicaEnemy = 79.9f;
+                defesaInimigo.text = ((massatomicaEnemy).ToString());
+            }
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Zinco") {
+                massatomicaEnemy = 65.4f;
+                defesaInimigo.text = ((massatomicaEnemy).ToString());
+            }
+            if (PlayerPrefs.GetString("Oponente" + contadorEnemy.ToString()) == "Boro") {
+                massatomicaEnemy = 10.8f;
+                defesaInimigo.text = ((massatomicaEnemy).ToString());
+            }
+        }
+        controladorBotoes.SetActive(false);
+        Invoke("checkHit", 1);
+    }
+
+    void checkHit() {
+
+        if (ataqueSelecionado == 2) {
+            if (float.Parse(ataqueEscolhido.text) > natomicoEnemy) {
+                particulaganho.SetActive(true);
+                Invoke("animGanho", 1);
+                //"O oponente Perdeu"
+            } else {
+                particulaperda.SetActive(true);
+                Invoke("animPerda", 1);
+                //"O oponente Venceu"
+            }
+        } else {
+            if (float.Parse(ataqueEscolhido.text) > massatomicaEnemy) {
+                particulaganho.SetActive(true);
+                Invoke("animGanho", 1);
+                //"O oponente Perdeu"
+            } else {
+                particulaperda.SetActive(true);
+                Invoke("animPerda", 1);
+                //"O oponente Venceu"
+            }
+        }
+    }
+    void animVictory() {
+        if (PlayerPrefs.GetInt("auxHistorico") == PlayerPrefs.GetInt("contadorTrilha")) {
+            contadorTrilha++;
+            PlayerPrefs.SetInt("contadorTrilha", PlayerPrefs.GetInt("contadorTrilha") + contadorTrilha);
+        }
+        atackAnimation.GetComponent<Animator>().Play("Winner");
+    }
+    void animDerrota()
+    {
+        elementoPlayer.SetActive(false);
+        atackAnimation.GetComponent<Animator>().Play("Derrota_Luta");
+    }
+
 	void animGanho(){
 		particulaperda.SetActive (false);
 		particulaganho.SetActive (false);
@@ -159,16 +165,30 @@ public class LutaControler : MonoBehaviour {
 		mortesPlayer++;
 		if(contadorPlayer == 1){
 			GameObject.Find(teste.GetComponent<Image>().sprite.name).SetActive(false);
-		}if(contadorPlayer == 2){
+            ataqueEscolhido.text = "0";
+            defesaInimigo.text = "0";
+            //contadorPlayer++;
+            Invoke("mudarPlayer", 2);
+            Debug.Log("entrou aki e nao perdeuuu == 1");
+        }
+        if(contadorPlayer == 2){
 			GameObject.Find(teste.GetComponent<Image>().sprite.name).SetActive(false);
-		}if(contadorPlayer== 3){
+            ataqueEscolhido.text = "0";
+            defesaInimigo.text = "0";
+            //contadorPlayer++;
+            Invoke("mudarPlayer", 2);
+            Debug.Log("entrou aki e nao perdeuuu ==2");
+        }
+        if(contadorPlayer== 3){
 			GameObject.Find(teste.GetComponent<Image>().sprite.name).SetActive(false);
-		}
+            ataqueEscolhido.text = "0";
+            defesaInimigo.text = "0";
+            Invoke("animDerrota", 2);
+            
+            Debug.Log("entrou aki e nao perdeuuu");
+        }
 
-		ataqueEscolhido.text = "0";
-		defesaInimigo.text = "0";
-		//contadorPlayer++;
-		Invoke("mudarPlayer", 2);
+		
 
 	}
 
@@ -196,6 +216,7 @@ public class LutaControler : MonoBehaviour {
 	void mudarPlayer(){ //Essa função muda o sprite do personagem para "selecione um elemento", após uma derrota!
 		
 		imagemPlayer.sprite = Resources.Load<Sprite>("Sprites/"+"selecione_elemento")as Sprite;
+        contadorPlayer++;
 		controladorVez ();
 	}
 

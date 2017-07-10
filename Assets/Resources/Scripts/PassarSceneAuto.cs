@@ -5,22 +5,35 @@ using UnityEngine.SceneManagement;
 
 public class PassarSceneAuto : MonoBehaviour {
 
-	public string scene;
+	
 	public GameObject fade;
 
 	// Use this for initialization
 	void Start () {
-		Invoke("passarAuto", 6);
-		Invoke ("playFade", 5);
+        waitForTime();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
 	}
+    void waitForTime()
+    {
+        Invoke("passarAuto", 6);
+        Invoke("playFade", 5);
+    }
 
 	void passarAuto(){
-		SceneManager.LoadScene(scene);
+        if (PlayerPrefs.GetString("Boss") == "vazio")
+        {
+          
+            SceneManager.LoadScene("Luta1");
+        }
+        else {
+          
+            SceneManager.LoadScene("Boss1");
+        }
+            
 	}
 	void playFade(){
 		fade.SetActive (true);

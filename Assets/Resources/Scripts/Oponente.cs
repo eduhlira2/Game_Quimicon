@@ -41,16 +41,16 @@ public class Oponente : MonoBehaviour {
 	void inimigosFase(){
 		for (i=0; i < 26; i++) {
 			if (PlayerPrefs.GetString("Lutinha") == "fase1"){
-				fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/" + "carbono_face")as Sprite;
-				elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/" + "Carbono")as Sprite;
-				PlayerPrefs.SetString ("Oponente1", "Carbono");
-				nomeInimigo.text = "Carbono";
+				fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/" + "bromo_face")as Sprite;
+				elementoInimigo.sprite = Resources.Load<Sprite> ("Sprites/" + "Bromo")as Sprite;
+				PlayerPrefs.SetString ("Oponente1", "Bromo");
+				nomeInimigo.text = "Bromo";
 
-				fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/" + "carbono_face")as Sprite;
-				PlayerPrefs.SetString ("Oponente2", "Carbono");
+				fighterCinco.sprite = Resources.Load<Sprite> ("Sprites/" + "bromo_face")as Sprite;
+				PlayerPrefs.SetString ("Oponente2", "Bromo");
 
-				fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/" + "neon_face")as Sprite;
-				PlayerPrefs.SetString ("Oponente3", "Neon");
+				fighterSeis.sprite = Resources.Load<Sprite> ("Sprites/" + "bromo_face")as Sprite;
+				PlayerPrefs.SetString ("Oponente3", "Bromo");
 			}
 			if (PlayerPrefs.GetString("Lutinha") == "fase2"){
 				fighterQuatro.sprite = Resources.Load<Sprite> ("Sprites/" + "oxigenio_face")as Sprite;

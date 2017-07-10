@@ -4,7 +4,7 @@ using System.Collections;
 
 public class ShowElement : MonoBehaviour {
 
-	public GameObject elemento, elemento2, elemento3, elemento4, elemento5, ParticulasNascimento, botaoCriar,avisoErro, Explosion, camera;
+	public GameObject elemento, elemento2, elemento3, elemento4, elemento5, ParticulasNascimento, botaoCriar,avisoErro, Explosion, camera, MensageClone;
 	public string K, L, M, N, O, P, Q,aux_string;
 	public Text nEletrons;
 	public static int eletrons, jacriou;
@@ -74,7 +74,8 @@ public class ShowElement : MonoBehaviour {
 		Explosion.SetActive (true);
 
 		//Cria o Bromo
-		if (K == "2" && L == "8" && M == "18" && N == "7" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 35){
+		if (K == "2" && L == "8" && M == "18" && N == "7" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 35 && PlayerPrefs.GetInt("Bromo") == 0)
+        {
 			elemento2.SetActive(true);
 			ShowElement.eletrons=ShowElement.eletrons - 35;
 			PlayerPrefs.SetInt("QtdEletrons", ShowElement.eletrons); 
@@ -85,8 +86,15 @@ public class ShowElement : MonoBehaviour {
 			jacriou=1;
 			botaoCriar.SetActive(false);
 		}
-		//Cria o Bario
-		if (K == "2" && L == "8" && M == "18" && N == "18" && O == "8" && P == "2" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 56){
+        if (K == "2" && L == "8" && M == "18" && N == "7" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons") >= 35 && PlayerPrefs.GetInt("Bromo") == 1)
+        {
+            Debug.Log("criou um clone");
+            // MensageClone.SetActive(true);
+            jacriou = 1;
+        }
+            //Cria o Bario
+            if (K == "2" && L == "8" && M == "18" && N == "18" && O == "8" && P == "2" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 56 && PlayerPrefs.GetInt("Bario") == 0)
+        {
 			elemento.SetActive(true);
 			ShowElement.eletrons=ShowElement.eletrons - 56;
 			PlayerPrefs.SetInt("QtdEletrons", ShowElement.eletrons); 
@@ -97,8 +105,12 @@ public class ShowElement : MonoBehaviour {
 			jacriou=1;
 			botaoCriar.SetActive(false);
 		}
-		//Cria o Boro
-		if (K == "2" && L == "3" && M == "0" && N == "0" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 5){
+        if (K == "2" && L == "8" && M == "18" && N == "18" && O == "8" && P == "2" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons") >= 56 && PlayerPrefs.GetInt("Bario") == 1)
+        {
+            jacriou = 1;
+        }
+            //Cria o Boro
+            if (K == "2" && L == "3" && M == "0" && N == "0" && O == "0" && P == "0" && Q == "0" && PlayerPrefs.GetInt("QtdEletrons")>= 5){
 			elemento3.SetActive(true);
 			ShowElement.eletrons=ShowElement.eletrons - 5;
 			PlayerPrefs.SetInt("QtdEletrons", ShowElement.eletrons); 

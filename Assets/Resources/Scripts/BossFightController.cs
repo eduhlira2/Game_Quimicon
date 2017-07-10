@@ -69,8 +69,8 @@ public class BossFightController : MonoBehaviour {
 		}
 	}
 	void AnimDerrota(){
-		//aqui vai a animação da derrota
-		Debug.Log("Aparece Derrota");
+        AnimController.GetComponent<Animator>().Play("Derrota_Luta");
+        Debug.Log("Aparece Derrota");
 	}
 
 	public void alternativaCorreta (Text alternativa){
@@ -171,22 +171,29 @@ public class BossFightController : MonoBehaviour {
 			GameObject.Find(imagePlayer3.GetComponent<Image>().sprite.name).SetActive(false);
 		}
 		playersVivos--;
-		atualPergunta++;
-		ativarPergunta ();
+		
 
 	}
 	void Errou (){
 		if (playersVivos == 3 && errou==1) {
 			AnimController.GetComponent<Animator> ().Play ("AtaqueBoss");
 			Invoke ("SumirPlayer", 1.6f);
-		}if (playersVivos == 2 && errou==1) {
+            atualPergunta++;
+            ativarPergunta();
+        }
+        if (playersVivos == 2 && errou==1) {
 			AnimController.GetComponent<Animator> ().Play ("AtaqueBoss2");
 			Invoke ("SumirPlayer", 1.6f);
-		}if (playersVivos == 1 && errou==1) {
+            atualPergunta++;
+            ativarPergunta();
+        }
+        if (playersVivos == 1 && errou==1) {
 			AnimController.GetComponent<Animator> ().Play ("AtaqueBoss3");
 			Invoke ("SumirPlayer", 1.6f);
-			Invoke ("AnimDerrota", 3);
-		}
+			Invoke ("AnimDerrota", 2);
 
-	}
+		}
+        
+
+    }
 }
