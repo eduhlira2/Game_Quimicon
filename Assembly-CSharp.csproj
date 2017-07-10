@@ -47,9 +47,12 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Resources\Scripts\AtivarElementos.cs" />
+     <Compile Include="Assets\Resources\Scripts\AtivarElementosBoss.cs" />
      <Compile Include="Assets\Resources\Scripts\Ativar_Tabela.cs" />
+     <Compile Include="Assets\Resources\Scripts\BossFightController.cs" />
      <Compile Include="Assets\Resources\Scripts\CharacterSelect.cs" />
      <Compile Include="Assets\Resources\Scripts\CheckElements.cs" />
+     <Compile Include="Assets\Resources\Scripts\ControllerFases.cs" />
      <Compile Include="Assets\Resources\Scripts\Fundo.cs" />
      <Compile Include="Assets\Resources\Scripts\LutaControler.cs" />
      <Compile Include="Assets\Resources\Scripts\Oponente.cs" />

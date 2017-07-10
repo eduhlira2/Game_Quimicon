@@ -14,6 +14,8 @@ public class LutaControler : MonoBehaviour {
 	public Text ataqueEscolhido,defesaInimigo, nomeEnemy;
 	public Image imagemEnemy, imagemPlayer;
 
+	public static int contadorTrilha;
+
 
 	// Use this for initialization
 	void Start () {
@@ -126,6 +128,10 @@ public class LutaControler : MonoBehaviour {
 		}
 	}
 	void animVictory(){
+		if ( PlayerPrefs.GetInt("auxHistorico") == PlayerPrefs.GetInt ("contadorTrilha") ) { 
+			contadorTrilha++;
+			PlayerPrefs.SetInt ("contadorTrilha", PlayerPrefs.GetInt ("contadorTrilha") + contadorTrilha);
+		}
 		atackAnimation.GetComponent<Animator> ().Play ("Winner");
 	}
 	void animGanho(){
